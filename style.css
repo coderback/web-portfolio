@@ -72,79 +72,107 @@ a:hover {
 }
 
 /* HAMBURGER MENU */
-
 #hamburger-nav {
   display: none;
 }
 
-.hamburger-menu {
+.menu-btn {
   position: relative;
-  display: inline-block;
-}
-
-.hamburger-icon {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 24px;
-  width: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 30px; /* Match the previous width */
+  height: 24px; /* Match the previous height */
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  z-index: 1001; /* Ensure the button stays on top */
 }
 
-.hamburger-icon span {
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  transition: all 0.3 ease-in-out;
+.menu-btn__burger {
+  width: 30px; /* Match the previous width */
+  height: 2px; /* Match the previous height */
+  background: black; /* Change to black or any color you prefer */
+  border-radius: 1px; /* Adjust border radius */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
 }
 
-.menu-links {
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: '';
   position: absolute;
-  top: 100%;
+  width: 30px; /* Match the previous width */
+  height: 2px; /* Match the previous height */
+  background: black; /* Change to black or any color you prefer */
+  border-radius: 1px; /* Adjust border radius */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  transform: translateY(-8px); /* Adjust spacing */
+}
+
+.menu-btn__burger::after {
+  transform: translateY(8px); /* Adjust spacing */
+}
+
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-30px); /* Adjust animation */
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(21px, -21px); /* Adjust animation */
+}
+
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(21px, 21px); /* Adjust animation */
+}
+
+/* MENU LINKS */
+.menu-links {
+  position: fixed;
+  top: 0;
+  left: 0;
   right: 0;
+  bottom: 0;
   background-color: white;
-  width: fit-content;
+  width: 100%;
+  height: 100%;
   max-height: 0;
   overflow: hidden;
-  font-family: 'League Spartan', sans-serif; /* Apply League Spartan */
-  font-weight: 500; /* Semi-bold */
-  font-size: 1.5rem; /* Adjust size as needed */
-  transition: all 0.3 ease-in-out;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000; /* Ensure it stays below the button */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Disable clicks when menu is closed */
+}
+
+.menu-links.open {
+  max-height: 100vh;
+  pointer-events: auto; /* Enable clicks when menu is open */
 }
 
 .menu-links a {
   display: block;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
   font-size: 1.5rem;
   color: black;
   text-decoration: none;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-links li {
   list-style: none;
-}
-
-.menu-links.open {
-  max-height: 300px;
-}
-
-.hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(10px, 5px);
-}
-
-.hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(10px, -5px);
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-  opacity: 1;
 }
 
 /* SECTIONS */
