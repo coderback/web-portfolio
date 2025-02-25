@@ -136,14 +136,7 @@ a:hover {
 
 .hamburger-icon span:first-child {
   transform: none;
-}
-
-.hamburger-icon span:first-child {
   opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
 }
 
 /* SECTIONS */
@@ -165,15 +158,24 @@ section {
 #profile {
   display: flex;
   justify-content: center;
+  align-items: center; /* Ensures vertical alignment */
   gap: 5rem;
   height: 80vh;
 }
 
 .section__pic-container {
   display: flex;
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
+  width: 400px; /* Default size for larger screens */
+  aspect-ratio: 1 / 1; /* Ensures the container is always square */
+  border-radius: 50%; /* Makes the container round */
+  overflow: hidden; /* Ensures the image stays within the circular boundary */
+  flex-shrink: 0; /* Prevents the container from shrinking */
+}
+
+.section__pic-container img {
+  width: 100%; /* Ensures the image fills the container */
+  height: 100%; /* Ensures the image fills the container */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
 .section__text {
