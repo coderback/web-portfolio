@@ -28,47 +28,51 @@ export default function Navbar() {
   return (
     <header className="fixed w-full top-0 z-50 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md shadow-sm transition-colors text-black dark:text-white">
       <nav className="flex items-center justify-between px-6 py-4 md:px-16">
-       <h1 className="text-2xl font-semibold font-spartan text-forest dark:text-forest">T.O. Ojebiyi</h1>
-        <ul className="hidden md:flex gap-8 font-medium text-lg">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
+          {/* Logo */}
+          <h1 className="text-2xl font-semibold font-spartan text-black dark:text-white">T.O. Ojebiyi</h1>
+
+          {/* Desktop Nav Links */}
+          <ul className="hidden md:flex gap-8 font-medium text-lg">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
                   href={link.href}
                   className="hover:text-forest hover:underline underline-offset-8 dark:text-white"
                 >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+          {/* Right Controls: Dark Mode + Hamburger */}
+          <div className="flex items-center gap-4 md:hidden">
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="p-2 rounded-full border border-gray-300 dark:border-white hover:bg-gray-100 dark:hover:bg-neutral-700 transition"
+              aria-label="Toggle dark mode"
+            >
+              {darkMode ? (
+                <SunIcon className="h-5 w-5 text-yellow-400" />
+              ) : (
+                <MoonIcon className="h-5 w-5 text-black dark:text-white" />
+              )}
+            </button>
 
-        {/* Toggle Dark Mode */}
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="ml-4 p-2 rounded-full border border-gray-300 dark:border-white hover:bg-gray-100 dark:hover:bg-neutral-700 transition"
-          aria-label="Toggle dark mode"
-        >
-          {darkMode ? (
-            <SunIcon className="h-5 w-5 text-yellow-400" />
-          ) : (
-            <MoonIcon className="h-5 w-5 text-black dark:text-white" />
-          )}
-        </button>
+            {/* Hamburger */}
+            <div
+              className={`menu-btn ${isOpen ? 'open' : ''}`}
+              onClick={() => setIsOpen(!isOpen)}
+              role="button"
+              tabIndex={0}
+              aria-label="Toggle mobile menu"
+              onKeyDown={(e) => e.key === 'Enter' && setIsOpen(!isOpen)}
+            >
+              <div className="menu-btn__burger dark:invert"></div>
+            </div>
+          </div>
+        </nav>
 
-
-        {/* Hamburger Menu Button */}
-        <div
-          className={`menu-btn ${isOpen ? 'open' : ''} md:hidden`}
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle mobile menu"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => { if (e.key === 'Enter') setIsOpen(!isOpen); }}
-        >
-          <div className="menu-btn__burger dark:invert"></div>
-        </div>
-      </nav>
 
       {/* Hamburger Overlay */}
       <div className={`menu-links ${isOpen ? 'open' : ''}`}>
