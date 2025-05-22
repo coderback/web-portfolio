@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-montserrat bg-white text-neutral-800 dark:bg-neutral-900 dark:text-white;
+}
+
+section {
+  @apply scroll-mt-20 bg-white dark:bg-neutral-900;
+}
+
+.btn {
+  @apply inline-block px-6 py-2 rounded-full font-semibold text-center transition duration-300;
+}
+
+.btn-primary {
+  @apply bg-neutral-900 text-white hover:bg-forest dark:bg-white dark:text-black dark:hover:bg-forest dark:hover:text-white;
+}
+
+.btn-outline {
+  @apply border border-neutral-900 text-neutral-900 hover:bg-forest hover:border-forest hover:text-white dark:border-white dark:text-white dark:hover:bg-forest dark:hover:text-white;
+}
+
+
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  z-index: 1001;
+}
+
+.menu-btn__burger {
+  width: 30px;
+  height: 2px;
+  background: black;
+  border-radius: 1px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: black;
+  border-radius: 1px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  transform: translateY(-8px);
+}
+
+.menu-btn__burger::after {
+  transform: translateY(8px);
+}
+
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-30px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(21px, -21px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(21px, 21px);
+}
+
+
+/* Mobile Menu Overlay */
+.menu-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  @apply dark:bg-neutral-900;
+  width: 100vw;
+  height: 100vh;
+  max-height: 0;
+  overflow: hidden;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  transition: max-height 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.menu-links.open {
+  max-height: 100vh;
+  pointer-events: auto;
+}
+
+.menu-links a {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  @apply hover:text-forest dark:text-white dark:hover:text-forest;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
