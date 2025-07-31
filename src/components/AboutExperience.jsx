@@ -73,7 +73,7 @@ export default function AboutExperience() {
               <p className="text-gray-700 dark:text-white text-justify mt-2">
                 Developing innovative solutions at CarbonTrac, a climate technology startup. 
                 Building full-stack applications and training machine learning models with the goal of reducing 
-                the UK's carbon emission by 5% by 2030.
+                the UK&apos;s carbon emission by 5% by 2030.
               </p>
             </div>
 
