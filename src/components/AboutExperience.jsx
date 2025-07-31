@@ -32,7 +32,7 @@ export default function AboutExperience() {
             <div>
               <h3 className="text-xl font-semibold">University of the West of England, Bristol</h3>
               <p className="italic">BSc (Hons) Computer Science</p>
-              <p>Expected: July 2025 | Anticipated First-Class Honours</p>
+              <p>July 2025 | 2:1 Honours</p>
             </div>
           </div>
 
@@ -52,26 +52,55 @@ export default function AboutExperience() {
           <p className="text-lg font-light text-center lg:text-left">Look into my</p>
           <h2 className="text-5xl font-extrabold text-center lg:text-left mb-6 font-spartan">Experience</h2>
 
-          <div className="flex items-center gap-4 mb-4">
-            <Image
-              src="/assets/reputation.png"
-              alt="Experience icon"
-              width={40}
-              height={40}
-              className="h-10 w-10 dark:invert"
-            />
+          <div className="space-y-6">
+            {/* CarbonTrac Experience */}
             <div>
-              <h3 className="text-xl font-semibold">NoMensa</h3>
-              <p className="italic">UX & Accessibility Intern</p>
-              <p>July 2024 – August 2024</p>
+              <div className="flex items-center gap-4 mb-4">
+                <Image
+                  src="/assets/reputation.png"
+                  alt="Experience icon"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 dark:invert"
+                />
+                <div>
+                  <h3 className="text-xl font-semibold">CarbonTrac</h3>
+                  <p className="italic">Full-stack Engineer Intern</p>
+                  <p>July 2025 – Present</p>
+                </div>
+              </div>
+
+              <p className="text-gray-700 dark:text-white text-justify mt-2">
+                Developing innovative solutions at CarbonTrac, a climate technology startup. 
+                Building full-stack applications and training machine learning models with the goal of reducing 
+                the UK's carbon emission by 5% by 2030.
+              </p>
+            </div>
+
+            {/* NoMensa Experience */}
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <Image
+                  src="/assets/reputation.png"
+                  alt="Experience icon"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 dark:invert"
+                />
+                <div>
+                  <h3 className="text-xl font-semibold">NoMensa</h3>
+                  <p className="italic">UX & Accessibility Intern</p>
+                  <p>July 2024 – August 2024</p>
+                </div>
+              </div>
+
+              <p className="text-gray-700 dark:text-white text-justify mt-2">
+                Conducted comprehensive research on AI applications in healthcare, facilitated stakeholder workshops,
+                and developed user personas. Designed service and journey maps, prototypes, and conducted user research
+                to refine solutions. Delivered actionable insights for more user-centric, efficient healthcare AI systems.
+              </p>
             </div>
           </div>
-
-          <p className="text-gray-700 dark:text-white text-justify mt-2">
-            Conducted comprehensive research on AI applications in healthcare, facilitated stakeholder workshops,
-            and developed user personas. Designed service and journey maps, prototypes, and conducted user research
-            to refine solutions. Delivered actionable insights for more user-centric, efficient healthcare AI systems.
-          </p>
         </motion.div>
       </div>
     </section>

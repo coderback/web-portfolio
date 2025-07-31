@@ -43,9 +43,9 @@ export default function Hero() {
         <div className="text-xl font-medium text-gray-700 dark:text-white mb-6 min-h-[2rem]">
           <Typewriter
             words={[
-              'Computer Science Student',
+              'Computer Science Graduate',
+              'Full-Stack Engineer',
               'AI/ML Engineer',
-              'Full-Stack Developer',
               'Data Scientist'
             ]}
             loop={0}
