@@ -10,11 +10,11 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 const projects = [
   {
     title: 'Algorender - Data structure & Algorithms Visualiser',
-    image: '/assets/Algorender.png',
+    image: '/assets/algorender.png',
     github: 'https://github.com/coderback/Algorender',
     live: 'https://algorender.vercel.app/',
     description: 'Interactive visualization tool for data structures and algorithms',
-    tech: ['React', 'TypeScript', 'D3.js', 'Tailwind CSS']
+    tech: ['React', 'Next.js', 'TypeScript', 'D3.js', 'Tailwind CSS']
   },
   {
     title: 'ColonScan - Colon Cancer Segmentation & Classification',
@@ -22,15 +22,32 @@ const projects = [
     github: 'https://github.com/coderback/colonscan',
     live: 'https://github.com/coderback/colonscan',
     description: 'AI-powered medical imaging analysis for colon cancer detection',
-    tech: ['React', 'Python', 'Django', 'Tailwind CSS', 'OpenCV', 'Flask']
+    tech: ['React', 'Next.js', 'Django', 'PostgreSQL', 'Python', 'Pytorch', 'Tailwind CSS', 'OpenCV', 'Flask', 'Nginx', 'Redis', 'Docker']
+  },
+  {
+    title: 'AirHop Bristol - Break scheduling and Kitchen management system',
+    image: '/assets/airhop-dashboard.png',
+    github: 'https://github.com/coderback/Airhop-shift-scheduler',
+    live: 'https://airhop-shift.vercel.app/',
+    description: 'Venue management platform with intelligent break scheduling and kitchen order management',
+    tech: ['React', 'Next.js', 'Node.js', 'Express.js', 'Python', 'FastAPI', 'PostgreSQL',
+  'Redis', 'Docker', 'Tailwind CSS', 'Selenium', 'JWT', 'Scikit-learn']
+  },
+  {
+    title: 'Mountain Rescue Simulation - Graph Neural Network for Multi-Agent Reinforcement Learning (GNN-MARL)',
+    image: '/assets/mountain_rescue_simulation.png',
+    github: 'https://github.com/coderback/AMAS-resit-portfolio',
+    live: 'https://github.com/coderback/AMAS-resit-portfolio',
+    description: 'Multi-agent reinforcement learning system for mountain rescue using Graph Neural Networks',
+    tech: ['Python', 'PyTorch', 'PyTorch Geometric', 'Mesa', 'Solara', 'NumPy', 'Matplotlib', 'Jupyter'],
   },
   {
     title: 'Patient Data Dashboard',
     image: '/assets/Medical Dashboard 05_03_2025 17_52_30.png',
     github: 'https://github.com/DinaMetwalli/Patient-Data-Dashboard',
     live: 'https://github.com/DinaMetwalli/Patient-Data-Dashboard',
-    description: 'Comprehensive healthcare data visualization and management system',
-    tech: ['Electron.js', 'Python', 'Bootstrap', 'SQLite']
+    description: 'Healthcare data visualization and management system',
+    tech: ['Electron.js', 'Python', 'Scikit-learn', 'SQLite']
   },
   {
     title: 'Restaurant Management System',
@@ -64,17 +81,28 @@ export default function Projects() {
             interval: 5000,
             pauseOnHover: true,
             pauseOnFocus: true,
-            padding: { left: '1rem', right: '1rem' },
+            padding: 0,
+            fixedWidth: null,
+            fixedHeight: null,
+            height: null,
+            focus: 'center',
+            omitEnd: true,
+            drag: true,
+            snap: true,
+            speed: 600,
+            rewind: false,
             breakpoints: {
               1280: { 
                 perPage: 2,
                 gap: '1.5rem',
-                padding: { left: '1rem', right: '1rem' }
+                padding: 0,
+                omitEnd: true
               },
               768: { 
                 perPage: 1,
                 gap: '1rem',
-                padding: { left: '0.5rem', right: '0.5rem' }
+                padding: 0,
+                omitEnd: true
               },
             },
           }}
@@ -111,7 +139,7 @@ export default function Projects() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 sm:p-6 w-full h-full shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 sm:p-6 w-full h-full shadow-lg hover:shadow-xl transition-all duration-300 min-h-[480px] flex flex-col"
                 >
                   <div className="aspect-video overflow-hidden rounded-xl mb-4 sm:mb-6 relative group">
                     <Image
@@ -130,7 +158,8 @@ export default function Projects() {
                     {project.description}
                   </p>
                   
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center mb-4 sm:mb-6">
+                  <div className="flex-grow">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center mb-4 sm:mb-6">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
@@ -139,9 +168,10 @@ export default function Projects() {
                         {tech}
                       </span>
                     ))}
+                    </div>
                   </div>
 
-                  <div className="flex justify-center gap-3 sm:gap-4">
+                  <div className="flex justify-center gap-3 sm:gap-4 mt-auto">
                     <Link href={project.github} target="_blank" aria-label={`View ${project.title} on GitHub`}>
                       <button className="btn btn-outline group text-sm sm:text-base px-3 sm:px-4 py-1.5 sm:py-2 whitespace-nowrap">
                         <span className="flex items-center gap-1.5 sm:gap-2">
