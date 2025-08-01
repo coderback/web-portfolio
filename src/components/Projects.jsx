@@ -26,8 +26,8 @@ const projects = [
   },
   {
     title: 'AirHop Bristol - Break scheduling and Kitchen management system',
-    image: '/assets/airhop-dashboard.png',
-    github: 'https://github.com/coderback/Airhop-shift-scheduler',
+    image: '/assets/park-dashboard.png',
+    github: 'https://airhop-shift.vercel.app/',
     live: 'https://airhop-shift.vercel.app/',
     description: 'Venue management platform with intelligent break scheduling and kitchen order management',
     tech: ['React', 'Next.js', 'Node.js', 'Express.js', 'Python', 'FastAPI', 'PostgreSQL',
