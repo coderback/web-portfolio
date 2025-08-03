@@ -42,6 +42,14 @@ const projects = [
     tech: ['Python', 'PyTorch', 'PyTorch Geometric', 'Mesa', 'Solara', 'NumPy', 'Matplotlib', 'Jupyter'],
   },
   {
+    title: 'TobiOS - Operating System Simulation',
+    image: '/assets/TobiOS.png',
+    github: 'https://github.com/coderback/TobiOS',
+    live: 'https://github.com/coderback/TobiOS',
+    description: 'Operating system simulation that demonstrates core OS concepts.',
+    tech: ['C++'],
+  },
+  {
     title: 'Patient Data Dashboard',
     image: '/assets/Medical Dashboard 05_03_2025 17_52_30.png',
     github: 'https://github.com/DinaMetwalli/Patient-Data-Dashboard',
