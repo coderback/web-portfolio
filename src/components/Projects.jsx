@@ -1,5 +1,5 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { motion } from 'framer-motion';
@@ -63,6 +63,7 @@ const projects = [
 
 export default function Projects() {
   const splideRef = useRef();
+  const [showAll, setShowAll] = useState(false);
 
   return (
     <section id="projects" className="px-4 sm:px-6 md:px-16 py-16 sm:py-20 bg-white dark:bg-neutral-900">
@@ -70,6 +71,8 @@ export default function Projects() {
       <h2 className="text-4xl sm:text-5xl text-center font-extrabold mb-8 sm:mb-12 font-spartan">Projects</h2>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+        {!showAll ? (
+          <>
         <Splide
           hasTrack={false}
           options={{
@@ -207,6 +210,102 @@ export default function Projects() {
           {/* Custom Pagination */}
           <div className="splide__pagination splide__pagination--ltr mt-6 sm:mt-8" />
         </Splide>
+        </>
+        ) : (
+          <>
+            {/* Grid Layout for Show All */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+            >
+              {projects.map((project, index) => (
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col"
+                >
+                  <div className="aspect-video overflow-hidden rounded-xl mb-4 sm:mb-6 relative group">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={500}
+                      height={300}
+                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
+                  </div>
+                  
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-center font-spartan line-clamp-2">{project.title}</h3>
+                  
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-center mb-3 sm:mb-4 line-clamp-3">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex-grow">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center mb-4 sm:mb-6">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-gray-100 dark:bg-neutral-700 rounded-full text-gray-700 dark:text-gray-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center gap-3 sm:gap-4 mt-auto">
+                    {project.github && (
+                      <Link href={project.github} target="_blank" aria-label={`View ${project.title} on GitHub`}>
+                        <button className="btn btn-outline group text-sm sm:text-base px-3 sm:px-4 py-1.5 sm:py-2 whitespace-nowrap">
+                          <span className="flex items-center gap-1.5 sm:gap-2">
+                            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                            </svg>
+                            GitHub
+                          </span>
+                        </button>
+                      </Link>
+                    )}
+                    {project.live && (
+                      <Link href={project.live} target="_blank" aria-label={`Live demo of ${project.title}`}>
+                        <button className="btn btn-primary group text-sm sm:text-base px-3 sm:px-4 py-1.5 sm:py-2 whitespace-nowrap">
+                          <span className="flex items-center gap-1.5 sm:gap-2">
+                            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            Live Demo
+                          </span>
+                        </button>
+                      </Link>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </>
+        )}
+        
+        {/* Show All / Show Less Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-center mt-8"
+        >
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="btn btn-primary px-6 py-3 text-base font-semibold transition-all duration-300 hover:scale-105"
+          >
+            {showAll ? 'Show Less' : 'Show All Projects'}
+          </button>
+        </motion.div>
       </div>
     </section>
   );
