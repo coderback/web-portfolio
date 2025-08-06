@@ -58,7 +58,7 @@ export default function Hero() {
         </div>
 
         <p className="text-base text-gray-600 dark:text-gray-300 mb-8">
-          Final-year Computer Science student specializing in Artificial Intelligence, with a strong foundation in
+          I specialize in Artificial Intelligence, with a strong foundation in
           machine learning, data analysis, and software development. Passionate about developing innovative AI solutions
           to solve real-world problems.
         </p>
