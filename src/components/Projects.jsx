@@ -32,6 +32,21 @@ const projects = [
   'Redis', 'Docker', 'Tailwind CSS', 'Selenium', 'JWT', 'Scikit-learn']
   },
   {
+    title: 'Windrush - Job Platform',
+    image: '/assets/windrush-platform.png',
+    github: 'https://github.com/coderback/Windrush',
+    description: 'Full-stack job board platform connecting international talent with UK visa sponsors. Features AI-powered job recommendations, and comprehensive user profiles.',
+    tech: ['Django', 'Next.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker', 'Python', 'React', 'Tailwind CSS']
+  },
+  {
+    title: 'UWE African Caribbean Society - Community Website',
+    image: '/assets/uwe-acs.png',
+    github: 'https://github.com/coderback/uwe-acs-webapp',
+    live: 'https://uwe-acs.vercel.app/',
+    description: 'Community website built for UWE Bristol ACS society celebrating African and Caribbean culture at UWE Bristol with interactive features and smooth animations',
+    tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion',]
+  },
+  {
     title: 'Mountain Rescue Simulation - Graph Neural Network for Multi-Agent Reinforcement Learning (GNN-MARL)',
     image: '/assets/mountain_rescue_simulation.png',
     github: 'https://github.com/coderback/AMAS-resit-portfolio',
@@ -39,11 +54,33 @@ const projects = [
     tech: ['Python', 'PyTorch', 'PyTorch Geometric', 'Mesa', 'Solara', 'NumPy', 'Matplotlib', 'Jupyter'],
   },
   {
+    title: 'DRW Crypto Market Prediction - Competition Solution',
+    image: '/assets/Market Features Analysis.png',
+    github: 'https://github.com/coderback/drw-crypto-market-prediction',
+    description: 'Comprehensive cryptocurrency market prediction solution achieving 89.7% of competition winner performance. Features three distinct ML approaches:  EDA analysis, Ridge regression (0.1175 correlation), and a neural architecture with AutoEncoder synthesis.',
+    tech: ['Python', 'PyTorch', 'XGBoost', 'Scikit-learn', 'Pandas', 'NumPy', 'SHAP', 'Jupyter', 'Matplotlib', 'Seaborn', 'Plotly']
+  },
+  {
+    title: 'Credit Card Fraud Detection - End-to-End ML Analysis',
+    image: '/assets/fraud-detection.png',
+    github: 'https://github.com/coderback/Credit-Card-Fraud-Detection',
+    description: 'Comprehensive machine learning analysis for credit card fraud detection achieving 86.61% AUC-PR with $9,811 net benefit per test period.Features advanced class imbalance handling and business impact analysis.',
+    tech: ['Python', 'Scikit-learn', 'XGBoost', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Imbalanced-learn', 'Jupyter']
+  },
+  {
     title: 'TobiOS - Operating System Simulation',
     image: '/assets/TobiOS.png',
     github: 'https://github.com/coderback/TobiOS',
     description: 'Operating system simulation that demonstrates core OS concepts.',
     tech: ['C++'],
+  },
+  {
+    title: 'Black Hole Simulation - Real-time Relativistic Ray Tracer',
+    image: '/assets/blackhole-simulation.png',
+    github: 'https://github.com/coderback/space_simulation',
+    description: 'GPU-accelerated black hole visualization implementing Einstein\'s field equations with real-time ray tracing through curved spacetime. Features Kerr & Schwarzschild metrics, gravitational lensing, accretion disks, and relativistic jets.',
+    tech: ['C++17', 'OpenGL 4.3', 'GLSL Compute Shaders', 'CMake', 'GLFW',
+  'GLEW', 'GLM', 'CUDA']
   },
   {
     title: 'Patient Data Dashboard',
