@@ -43,6 +43,17 @@ export default function Navbar() {
             </li>
           ))}
           <li>
+            <a
+              href="/documents/TIMOTHY_OJEBIYI_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-1.5 text-sm font-semibold rounded-full border border-neutral-900 dark:border-white hover:bg-forest hover:border-forest hover:text-white dark:hover:bg-forest dark:hover:border-forest dark:hover:text-white transition-all shadow-sm"
+              aria-label="View CV"
+            >
+              CV
+            </a>
+          </li>
+          <li>
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 rounded-full border border-gray-300 dark:border-white hover:bg-gray-100 dark:hover:bg-neutral-700 transition"
@@ -99,6 +110,17 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              href="/documents/TIMOTHY_OJEBIYI_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-forest hover:underline underline-offset-8"
+            >
+              CV
+            </a>
+          </li>
         </ul>
       </div>
     </header>

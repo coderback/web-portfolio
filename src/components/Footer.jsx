@@ -21,6 +21,15 @@ export default function Footer() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="/documents/TIMOTHY_OJEBIYI_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-forest hover:underline underline-offset-8 font-medium"
+            aria-label="View CV"
+          >
+            CV
+          </a>
       </nav>
       <p className="text-sm text-gray-500">
         &copy; 2025 Timothy Ojebiyi. All Rights Reserved.
