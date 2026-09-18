@@ -9,6 +9,55 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 
 const projects = [
   {
+    title: 'Unsaid - AI 10-K Disclosure Diffing & Removal Detector',
+    image: '/assets/unsaid.png',
+    github: 'https://github.com/coderback/Unsaid',
+    description: 'AI-powered 10-K risk disclosure analysis engine comparing SEC Item 1A/7A filings across years to surface removed, softened, and new risk language using semantic alignment and LLM judgment.',
+    tech: ['Next.js', 'FastAPI', 'Python', 'TypeScript', 'Tailwind CSS', 'LLM', 'SEC EDGAR']
+  },
+  {
+    title: 'Canopy - Multi-Entity Command Centre for Xero',
+    image: '/assets/canopy.jpg',
+    github: 'https://github.com/coderback/Canopy',
+    description: 'Multi-entity financial operations command center where AI proposes structured cross-organization chart of accounts mappings with human approval, deterministic execution, and drift-aware health monitoring.',
+    tech: ['Next.js', 'FastAPI', 'Python', 'TypeScript', 'PostgreSQL', 'Docker', 'Xero API']
+  },
+  {
+    title: 'GRIT - Mobile Fitness & AI Nutrition Coach',
+    image: '/assets/grit.png',
+    github: 'https://github.com/coderback/Grit',
+    description: 'Full-stack mobile fitness platform combining macro tracking, habit building, activity logging, social challenges, and Claude-powered AI coaching in an opinionated dark-mode mobile experience.',
+    tech: ['React Native', 'Expo', 'NestJS', 'Supabase', 'TypeScript', 'Claude AI', 'Tailwind CSS']
+  },
+  {
+    title: 'ControlNet from Scratch - Parity-Verified Diffusion',
+    image: '/assets/controlnet.png',
+    github: 'https://github.com/coderback/ControlNet-Implementation',
+    description: 'From-scratch, mathematical parity-verified ControlNet for Stable Diffusion v1.5 with end-to-end training pipeline, zero-convolution growth validation, and COCO Canny conditioning.',
+    tech: ['Python', 'PyTorch', 'HuggingFace Diffusers', 'Stable Diffusion', 'OpenCV', 'Jupyter', 'CUDA']
+  },
+  {
+    title: 'cambium - Structure-Conditioned Graph-ML Core',
+    image: '/assets/cambium.jpg',
+    github: 'https://github.com/coderback/cambium',
+    description: 'Shared graph machine learning core for structure-conditioned models featuring temporal-holdout evaluation harnesses, GNN encoders, and specialized adapters for fraud detection, risk, and discovery.',
+    tech: ['Python', 'PyTorch', 'PyTorch Geometric', 'GNN', 'NetworkX', 'Scikit-learn', 'NumPy']
+  },
+  {
+    title: 'WC2026 - Probabilistic FIFA World Cup Forecasting Engine',
+    image: '/assets/fifa-wc2026.jpg',
+    github: 'https://github.com/coderback/fifa-wc2026-prediction-model',
+    description: 'Goal-based probabilistic forecasting system for the 2026 FIFA World Cup using Elo-parameterized Dixon-Coles models, gradient-boosted ensemble blending, and 50,000-run Monte Carlo simulations with backtesting against de-vigged bookmaker odds.',
+    tech: ['Python', 'Dixon-Coles', 'Monte Carlo Simulation', 'LightGBM', 'XGBoost', 'Pandas', 'NumPy', 'Jupyter']
+  },
+  {
+    title: 'Premier League Forecasting System',
+    image: '/assets/pl-forecast.jpg',
+    github: 'https://github.com/coderback/premier-league-forcast-system',
+    description: 'Walk-forward Premier League match-outcome and season simulation engine featuring production Dixon-Coles goal expectation models, Monte Carlo table projections, and betting market benchmark validation.',
+    tech: ['Python', 'Dixon-Coles', 'Monte Carlo Simulation', 'Pandas', 'NumPy', 'Scikit-learn']
+  },
+  {
     title: 'Algorender - Data structure & Algorithms Visualiser',
     image: '/assets/algorender.png',
     github: 'https://github.com/coderback/Algorender',
@@ -123,28 +172,17 @@ export default function Projects() {
             interval: 5000,
             pauseOnHover: true,
             pauseOnFocus: true,
-            padding: 0,
-            fixedWidth: null,
-            fixedHeight: null,
-            height: null,
-            focus: 'center',
-            omitEnd: true,
             drag: true,
-            snap: true,
             speed: 600,
             rewind: false,
             breakpoints: {
-              1280: { 
+              1024: { 
                 perPage: 2,
                 gap: '1.5rem',
-                padding: 0,
-                omitEnd: true
               },
-              768: { 
+              640: { 
                 perPage: 1,
                 gap: '1rem',
-                padding: 0,
-                omitEnd: true
               },
             },
           }}
@@ -173,16 +211,9 @@ export default function Projects() {
           </div>
 
           <SplideTrack className="pb-8 sm:pb-12">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <SplideSlide key={project.title}>
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 sm:p-6 w-full h-full shadow-lg hover:shadow-xl transition-all duration-300 min-h-[480px] flex flex-col"
-                >
+                <div className="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 sm:p-6 w-full h-full shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 min-h-[480px] flex flex-col">
                   <div className="aspect-video overflow-hidden rounded-xl mb-4 sm:mb-6 relative group">
                     <Image
                       src={project.image}
@@ -239,7 +270,7 @@ export default function Projects() {
                       </Link>
                     )}
                   </div>
-                </motion.div>
+                </div>
               </SplideSlide>
             ))}
           </SplideTrack>

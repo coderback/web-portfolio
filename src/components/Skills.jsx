@@ -42,7 +42,8 @@ const skillsData = [
 ];
 
 const techStack = [
-  'Python', 'C++', 'Rust','JavaScript', 'React.js', 'Next.js', 'Node.js',
+  'Python', 'C++', 'Rust', 'TypeScript', 'JavaScript', 'React.js', 'Next.js', 'Node.js',
+  'NestJS', 'React Native', 'Expo', 'Supabase',
   'Django', 'FastAPI',
   'MySQL', 'PostgreSQL', 'Pandas', 'NumPy', 'Matplotlib', 'scikit-learn',
   'TensorFlow', 'PyTorch',
