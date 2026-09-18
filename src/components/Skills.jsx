@@ -44,11 +44,11 @@ const skillsData = [
 const techStack = [
   'Python', 'C++', 'Rust', 'TypeScript', 'JavaScript', 'React.js', 'Next.js', 'Node.js',
   'NestJS', 'React Native', 'Expo', 'Supabase',
-  'Django', 'FastAPI',
+  'Django', 'FastAPI', 'Celery', 'Redis',
   'MySQL', 'PostgreSQL', 'Pandas', 'NumPy', 'Matplotlib', 'scikit-learn',
-  'TensorFlow', 'PyTorch',
+  'TensorFlow', 'PyTorch', 'Numba',
   'R', 'Power BI', 'Tableau',
-  'Docker', 'Kubernetes', 'Nginx',
+  'Docker', 'Kubernetes', 'Nginx', 'Playwright',
   'Tailwind CSS', 'Git',
   'Azure', 'Jupyter'
 ];

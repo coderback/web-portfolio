@@ -9,6 +9,20 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 
 const projects = [
   {
+    title: 'RootLayer - Autonomous Web Compliance & Accessibility Platform',
+    image: '/assets/rootlayer.jpg',
+    github: 'https://github.com/coderback/RootLayer',
+    description: 'AI-powered web compliance platform delivering automated WCAG 2.2 AA accessibility audits and GDPR/CCPA privacy assessments. Features multi-page Playwright sitemap crawling, axe-core analysis, multi-agent LLM adjudication, scheduled monitoring, and Stripe billing.',
+    tech: ['Next.js', 'FastAPI', 'Celery', 'Redis', 'PostgreSQL', 'Playwright', 'axe-core', 'Stripe', 'Docker']
+  },
+  {
+    title: 'Olimpia - High-Performance AI Chess Engine (AI Chessathon)',
+    image: '/assets/olimpia-chess.jpg',
+    github: 'https://github.com/coderback/olimpia-aichessathon',
+    description: 'High-performance autonomous chess engine built for the AI Chessathon tournament. Features custom bitboards with magic attack lookups, JIT-compiled Numba search achieving 1.4-2.0M nodes/sec, negamax alpha-beta with PVS, 2M-entry transposition tables, aspiration windows, null-move pruning, and tapered evaluation.',
+    tech: ['Python', 'Numba', 'Bitboards', 'Alpha-Beta Search', 'PVS', 'Transposition Tables', 'python-chess']
+  },
+  {
     title: 'Unsaid - AI 10-K Disclosure Diffing & Removal Detector',
     image: '/assets/unsaid.png',
     github: 'https://github.com/coderback/Unsaid',
