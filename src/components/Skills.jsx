@@ -6,51 +6,87 @@ const skillsData = [
   {
     category: 'Software Engineering',
     items: [
-      ['Python', 'Experienced'],
-      ['MySQL', 'Experienced'],
-      ['PostgreSql', 'Intermediate'],
-      ['CI/CD Pipelines', 'Basic'],
-      ['Version Control', 'Experienced'],
-      ['Agile Methodologies', 'Intermediate'],
-      ['Containerization', 'Intermediate'],
-      ['Data Structures and Algorithms', 'Intermediate'],
+      ['Python & TypeScript', 'Full-stack & systems architecture'],
+      ['Backend & API Design', 'FastAPI, NestJS & REST services'],
+      ['Distributed Systems', 'Celery, Redis & async worker queues'],
+      ['Relational Databases', 'PostgreSQL, MySQL & JSONB schemas'],
+      ['High-Performance Systems', 'JIT compilation, bitboards & algorithmic optimization'],
+      ['Containerization & DevOps', 'Docker Compose, multi-stage builds & Nginx'],
+      ['Automated Testing & QA', 'Playwright E2E, integration & unit suites'],
+      ['Version Control & CI/CD', 'Git workflows, GitHub Actions & release automation'],
     ],
   },
   {
     category: 'Artificial Intelligence',
     items: [
-      ['Machine Learning', 'Intermediate'],
-      ['Deep Learning', 'Intermediate'],
-      ['Natural Language Processing', 'Intermediate'],
-      ['Computer Vision', 'Intermediate'],
-      ['Multi Agent Systems', 'Basic'],
-      ['Reinforcement Learning', 'Basic'],
-      ['Generative AI', 'Basic'],
-      ['Explainable AI (XAI)', 'Basic'],
+      ['Generative AI & Diffusion', 'Stable Diffusion, ControlNet & zero-conv pipelines'],
+      ['Multi-Agent Systems', 'LLM orchestration, tool use & multi-pass adjudication'],
+      ['Deep Learning & PyTorch', 'Custom training loops, diffusers & CUDA acceleration'],
+      ['Graph Neural Networks (GNN)', 'PyTorch Geometric, temporal holdouts & embeddings'],
+      ['Computer Vision', 'Medical segmentation, OpenCV & Canny edge detection'],
+      ['Natural Language Processing', 'Semantic diffing, filings analysis & embeddings'],
+      ['Autonomous Game AI & Search', 'Alpha-Beta, PVS, transposition tables & quiescence'],
+      ['Explainable AI (XAI)', 'Feature attribution, zero-shot validation & interpretability'],
     ],
   },
   {
-    category: 'Data Science',
+    category: 'Data Science & Modeling',
     items: [
-      ['Data Analysis', 'Basic'],
-      ['Data Visualization', 'Intermediate'],
-      ['Statistical Analysis', 'Intermediate'],
-      ['Time Series Analysis', 'Intermediate'],
-      ['Data Storytelling', 'Basic'],
+      ['Probabilistic Modeling', 'Dixon-Coles & Poisson goal expectation engines'],
+      ['Monte Carlo Simulation', '50,000+ run tournament & league distributions'],
+      ['Statistical Machine Learning', 'LightGBM, XGBoost, scikit-learn & ensemble blending'],
+      ['Walk-Forward Backtesting', 'Out-of-sample validation & betting market benchmark checks'],
+      ['Data Engineering & ETL', 'NumPy, Pandas & high-throughput data manipulation'],
+      ['Scientific Visualization', 'Statistical distributions, interactive metrics & reporting'],
     ],
   },
 ];
 
-const techStack = [
-  'Python', 'C++', 'Rust', 'TypeScript', 'JavaScript', 'React.js', 'Next.js', 'Node.js',
-  'NestJS', 'React Native', 'Expo', 'Supabase',
-  'Django', 'FastAPI', 'Celery', 'Redis',
-  'MySQL', 'PostgreSQL', 'Pandas', 'NumPy', 'Matplotlib', 'scikit-learn',
-  'TensorFlow', 'PyTorch', 'Numba',
-  'R', 'Power BI', 'Tableau',
-  'Docker', 'Kubernetes', 'Nginx', 'Playwright',
-  'Tailwind CSS', 'Git',
-  'Azure', 'Jupyter'
+const techStackCategories = [
+  {
+    name: 'Languages',
+    skills: ['Python', 'TypeScript', 'JavaScript', 'C++', 'Rust', 'SQL'],
+  },
+  {
+    name: 'AI & Machine Learning',
+    skills: [
+      'PyTorch',
+      'PyTorch Geometric',
+      'Hugging Face',
+      'CUDA',
+      'TensorFlow',
+      'OpenCV',
+      'Numba',
+      'scikit-learn',
+      'Monte Carlo Methods',
+      'Pandas',
+      'NumPy',
+    ],
+  },
+  {
+    name: 'Backend & Systems',
+    skills: [
+      'FastAPI',
+      'Celery',
+      'Redis',
+      'Next.js',
+      'NestJS',
+      'Django',
+      'Node.js',
+      'PostgreSQL',
+      'MySQL',
+      'Supabase',
+      'Nginx',
+    ],
+  },
+  {
+    name: 'Frontend & Mobile',
+    skills: ['React.js', 'React Native', 'Expo', 'Tailwind CSS', 'D3.js'],
+  },
+  {
+    name: 'Cloud, DevOps & Tools',
+    skills: ['Docker', 'Kubernetes', 'Playwright', 'Git', 'Azure', 'Jupyter'],
+  },
 ];
 
 export default function Skills() {
@@ -69,22 +105,24 @@ export default function Skills() {
             whileHover={{ scale: 1.02 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-white dark:bg-neutral-800 border border-gray-300 dark:border-gray-600 p-6 rounded-2xl flex flex-col items-center text-center w-full sm:w-[90%] md:w-[45%] lg:w-[30%] shadow-sm"
+            className="bg-white dark:bg-neutral-800 border border-gray-300 dark:border-gray-600 p-6 sm:p-8 rounded-2xl flex flex-col items-center w-full sm:w-[90%] md:w-[45%] lg:w-[30%] shadow-sm"
           >
-            <h3 className="text-2xl font-extrabold mb-6">{category}</h3>
-            <div className="flex flex-col gap-4 items-start w-fit mx-auto">
-              {items.map(([skill, level]) => (
-                <div key={skill} className="flex items-center gap-4">
+            <h3 className="text-2xl font-extrabold mb-6 text-center">{category}</h3>
+            <div className="flex flex-col gap-4 items-start w-full">
+              {items.map(([skill, highlight]) => (
+                <div key={skill} className="flex items-start gap-3.5 text-left w-full">
                   <Image
                     src="/assets/checkmark.png"
                     alt="checkmark"
                     width={24}
                     height={24}
-                    className="h-10 w-10 dark:invert"
+                    className="h-6 w-6 dark:invert flex-shrink-0 mt-0.5"
                   />
-                  <div className="text-left">
-                    <p className="text-xl font-semibold">{skill}</p>
-                    <p className="text-sm text-gray-600 dark:text-white dark:text-opacity-60">{level}</p>
+                  <div className="flex-1">
+                    <p className="text-base sm:text-lg font-semibold leading-tight">{skill}</p>
+                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">
+                      {highlight}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -95,20 +133,34 @@ export default function Skills() {
 
       {/* Tech Stack Section */}
       <div className="mt-20 text-center">
-        <h3 className="text-4xl font-extrabold mb-6 font-spartan">Tech Stack</h3>
-        <p className="text-lg font-light mb-8">Technologies and Tools I Use</p>
-        <div className="flex flex-wrap justify-center gap-4">
-          {techStack.map((tech, index) => (
+        <h3 className="text-4xl font-extrabold mb-4 font-spartan">Tech Stack</h3>
+        <p className="text-lg font-light mb-10 text-gray-600 dark:text-gray-300">
+          Specialized Technologies, Frameworks & Tooling
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto text-left">
+          {techStackCategories.map((category, catIndex) => (
             <motion.div
-              key={tech}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.08 }}
+              key={category.name}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="bg-gray-100 dark:bg-neutral-700 text-black dark:text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition"
+              transition={{ duration: 0.4, delay: catIndex * 0.08 }}
+              className="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-sm flex flex-col"
             >
-              {tech}
+              <h4 className="text-xs font-bold uppercase tracking-wider text-forest dark:text-forest-light mb-4">
+                {category.name}
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((tech) => (
+                  <span
+                    key={tech}
+                    className="bg-gray-100 dark:bg-neutral-700 text-black dark:text-white px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium hover:scale-105 transition-transform duration-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
