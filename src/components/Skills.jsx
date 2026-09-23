@@ -138,24 +138,24 @@ export default function Skills() {
           Specialized Technologies, Frameworks & Tooling
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto text-left">
+        <div className="max-w-5xl mx-auto text-left bg-white dark:bg-neutral-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-sm divide-y divide-gray-200 dark:divide-gray-700">
           {techStackCategories.map((category, catIndex) => (
             <motion.div
               key={category.name}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: catIndex * 0.08 }}
-              className="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-sm flex flex-col"
+              className="grid grid-cols-1 md:grid-cols-[13rem_1fr] gap-3 md:gap-8 p-5 sm:p-6"
             >
-              <h4 className="text-xs font-bold uppercase tracking-wider text-forest dark:text-forest-light mb-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-forest dark:text-forest-light md:pt-2">
                 {category.name}
               </h4>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((tech) => (
                   <span
                     key={tech}
-                    className="bg-gray-100 dark:bg-neutral-700 text-black dark:text-white px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium hover:scale-105 transition-transform duration-200"
+                    className="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-neutral-700/60 text-sm font-medium text-neutral-800 dark:text-gray-100 hover:border-forest hover:text-forest dark:hover:border-forest-light dark:hover:text-forest-light transition-colors duration-200"
                   >
                     {tech}
                   </span>
