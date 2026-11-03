@@ -176,15 +176,6 @@ const projects = [
     tech: ['React', 'Next.js', 'TypeScript', 'D3.js', 'Tailwind CSS']
   },
   {
-    title: 'Greek Mythos - Archetype Personality Assessment',
-    tags: ['Full-Stack'],
-    image: '/assets/greek-mythos.jpg',
-    github: 'https://github.com/coderback/Mythos-Person',
-    live: 'https://mythos-person.vercel.app',
-    description: 'A 24-question forced-choice assessment that maps personality across eight dimensions to one of fifteen Greek mythological archetypes.',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS']
-  },
-  {
     title: 'UWE African Caribbean Society - Community Website',
     tags: ['Full-Stack'],
     image: '/assets/uwe-acs.png',
