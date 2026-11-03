@@ -67,6 +67,7 @@ const projects = [
     tags: ['AI & ML'],
     image: '/assets/controlnet.png',
     github: 'https://github.com/coderback/ControlNet-Implementation',
+    live: 'https://controlnet-canny-gallery.vercel.app',
     description: 'From-scratch, mathematical parity-verified ControlNet for Stable Diffusion v1.5 with end-to-end training pipeline, zero-convolution growth validation, and COCO Canny conditioning.',
     tech: ['Python', 'PyTorch', 'HuggingFace Diffusers', 'Stable Diffusion', 'OpenCV', 'Jupyter', 'CUDA']
   },
@@ -117,6 +118,7 @@ const projects = [
     tags: ['AI & ML'],
     image: '/assets/cambium.png',
     github: 'https://github.com/coderback/cambium',
+    live: 'https://cambium-gates.vercel.app',
     description: 'Shared graph machine learning core for structure-conditioned models featuring temporal-holdout evaluation harnesses, GNN encoders, and specialized adapters for fraud detection, risk, and discovery.',
     tech: ['Python', 'PyTorch', 'PyTorch Geometric', 'GNN', 'NetworkX', 'Scikit-learn', 'NumPy']
   },
@@ -160,7 +162,8 @@ const projects = [
     tags: ['AI & ML'],
     image: '/assets/mountain_rescue_simulation.png',
     github: 'https://github.com/coderback/GNN-MARL-Rescue-Robot-Operations',
-    description: 'Multi-agent reinforcement learning system for mountain rescue using Graph Neural Networks',
+    live: 'https://mountain-rescue-replay.vercel.app',
+    description: 'Multi-agent mountain rescue simulation comparing rule-based coordination with a Graph Neural Network reinforcement learning mode. The replay shows recorded runs of each mode and reports the training results as they are: the learned policy did not beat the rule-based coordination.',
     tech: ['Python', 'PyTorch', 'PyTorch Geometric', 'Mesa', 'Solara', 'NumPy', 'Matplotlib', 'Jupyter'],
   },
   {
