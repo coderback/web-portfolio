@@ -58,6 +58,7 @@ const projects = [
     tags: ['Data Science'],
     image: '/assets/fifa-wc2026.png',
     github: 'https://github.com/coderback/fifa-wc2026-prediction-model',
+    live: 'https://wc2026-forecast-ashy.vercel.app',
     description: 'Elo-parameterised Dixon-Coles model fit on ~49,000 international matches since 1872, wrapped in a 50,000-run Monte Carlo bracket simulation. Validated with a leak-free walk-forward backtest against de-vigged bookmaker odds, it ranked the eventual four semifinalists as its top four by champion probability.',
     tech: ['Python', 'Dixon-Coles', 'Monte Carlo Simulation', 'LightGBM', 'XGBoost', 'Pandas', 'NumPy', 'Jupyter']
   },
@@ -82,6 +83,7 @@ const projects = [
     tags: ['Data Science'],
     image: '/assets/fair-on-paper.png',
     github: 'https://github.com/coderback/prop-challenge-pricing',
+    live: 'https://fair-on-paper.vercel.app',
     description: 'Working paper and full reproduction package pricing a retail prop firm\'s published evaluation contract on twenty years of intraday index prices at measured broker costs, with every hypothesis fixed and committed before its run.',
     tech: ['Python', 'NumPy', 'Pandas', 'SciPy', 'Backward Induction', 'Pre-registration', 'LaTeX']
   },
@@ -90,6 +92,7 @@ const projects = [
     tags: ['Data Science'],
     image: '/assets/zhang-replication.png',
     github: 'https://github.com/coderback/zhang2025-replication',
+    live: 'https://zhang2025-replication.vercel.app',
     description: 'Pre-registered replication of a paper reporting Sharpe ratios of 4.65 to 5.87 from FinBERT sentiment on GDELT headlines. Result: not replicated. All 18 asset, timing and model combinations fall between -1.00 and +0.02, and none beats random-sign trading at the same costs.',
     tech: ['Python', 'FinBERT', 'XGBoost', 'GDELT', 'scikit-learn', 'Pandas', 'Pre-registration']
   },
@@ -139,7 +142,8 @@ const projects = [
     tags: ['Data Science'],
     image: '/assets/Market Features Analysis.png',
     github: 'https://github.com/coderback/drw-crypto-market-prediction',
-    description: 'Comprehensive cryptocurrency market prediction solution achieving 89.7% of competition winner performance. Features three distinct ML approaches: EDA analysis, Ridge regression (0.1175 correlation), and a neural architecture with AutoEncoder synthesis.',
+    live: 'https://drw-crypto-signal-lab.vercel.app',
+    description: 'Cryptocurrency market prediction competition solution comparing three ML approaches: EDA-led feature analysis, Ridge regression (0.1175 validation correlation), and a neural architecture with AutoEncoder synthesis.',
     tech: ['Python', 'PyTorch', 'XGBoost', 'Scikit-learn', 'Pandas', 'NumPy', 'SHAP', 'Jupyter', 'Matplotlib', 'Seaborn', 'Plotly']
   },
   {
@@ -147,6 +151,7 @@ const projects = [
     tags: ['Data Science'],
     image: '/assets/fraud-detection.png',
     github: 'https://github.com/coderback/Credit-Card-Fraud-Detection',
+    live: 'https://fraud-detection-explorer.vercel.app',
     description: 'Comprehensive machine learning analysis for credit card fraud detection achieving 86.61% AUC-PR with $9,811 net benefit per test period. Features advanced class imbalance handling and business impact analysis.',
     tech: ['Python', 'Scikit-learn', 'XGBoost', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Imbalanced-learn', 'Jupyter']
   },
@@ -163,6 +168,7 @@ const projects = [
     tags: ['Data Science'],
     image: '/assets/pl-forecast.png',
     github: 'https://github.com/coderback/premier-league-forcast-system',
+    live: 'https://pl-forecast-ledger.vercel.app',
     description: 'Walk-forward Premier League match-outcome and season simulation engine featuring production Dixon-Coles goal expectation models, Monte Carlo table projections, and betting market benchmark validation.',
     tech: ['Python', 'Dixon-Coles', 'Monte Carlo Simulation', 'Pandas', 'NumPy', 'Scikit-learn']
   },
