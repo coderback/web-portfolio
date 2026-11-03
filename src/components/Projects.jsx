@@ -50,6 +50,7 @@ const projects = [
     tags: ['Systems', 'AI & ML'],
     image: '/assets/olimpia-chess.png',
     github: 'https://github.com/coderback/olimpia-aichessathon',
+    live: 'https://olimpia-chess.vercel.app',
     description: 'Chess engine for the Optiver-sponsored AI Chessathon 2026. Joined on Day 3 and climbed from #241 to #82 of 485+ teams in under 48 hours. Compiling the search with Numba lifted throughput from 13,000 to ~2 million nodes/sec, and changes shipped only on statistically significant results, including a time-management fix worth +61 Elo (95% CI [+35, +88], 513 games).',
     tech: ['Python', 'Numba', 'Bitboards', 'Alpha-Beta Search', 'PVS', 'Transposition Tables', 'python-chess']
   },
@@ -131,7 +132,8 @@ const projects = [
     tags: ['Systems'],
     image: '/assets/blackhole-simulation.png',
     github: 'https://github.com/coderback/blackhole',
-    description: 'GPU-accelerated black hole visualization ray tracing light along geodesics through curved spacetime in real time. Features Kerr & Schwarzschild metrics, gravitational lensing, accretion disks, and relativistic jets. Builds on kavan010/black_hole.',
+    live: 'https://blackhole-webgl.vercel.app',
+    description: 'GPU-accelerated black hole visualization ray tracing light along Schwarzschild geodesics in real time, with a Kerr-inspired spin correction, gravitational lensing, accretion disks and relativistic jets. C++/OpenGL compute shaders with a WebGL2 port you can orbit in the browser. Builds on kavan010/black_hole.',
     tech: ['C++17', 'OpenGL 4.3', 'GLSL Compute Shaders', 'CMake', 'GLFW',
   'GLEW', 'GLM']
   },
@@ -203,8 +205,9 @@ const projects = [
     tags: ['Systems'],
     image: '/assets/TobiOS.png',
     github: 'https://github.com/coderback/TobiOS',
-    description: 'Operating system simulation that demonstrates core OS concepts.',
-    tech: ['C++'],
+    live: 'https://tobios-wasm.vercel.app',
+    description: 'Operating system simulation in C++ that demonstrates core OS concepts. The real shell runs in your browser, compiled to WebAssembly.',
+    tech: ['C++', 'CMake', 'WebAssembly', 'Emscripten'],
   },
   {
     title: 'Patient Data Dashboard',
