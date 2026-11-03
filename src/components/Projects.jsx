@@ -76,6 +76,7 @@ const projects = [
     tags: ['AI & ML', 'Full-Stack'],
     image: '/assets/unsaid.png',
     github: 'https://github.com/coderback/Unsaid',
+    live: 'https://unsaid-10k-demo.vercel.app',
     description: 'AI-powered 10-K risk disclosure analysis engine comparing SEC Item 1A/7A filings across years to surface removed, softened, and new risk language using semantic alignment and LLM judgment.',
     tech: ['Next.js', 'FastAPI', 'Python', 'TypeScript', 'Tailwind CSS', 'LLM', 'SEC EDGAR']
   },
@@ -102,6 +103,7 @@ const projects = [
     tags: ['AI & ML', 'Full-Stack'],
     image: '/assets/windrush-ai.png',
     github: 'https://github.com/coderback/Windrush',
+    live: 'https://windrush-career-demo.vercel.app',
     description: 'Agentic career advisor that parses CVs, scores each skill against O*NET AI automation exposure data, ranks matched jobs by a fit-vs-risk composite score, generates tailored cover letters, and autonomously submits applications via browser automation with a live CDP screencast feed.',
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'Python', 'Docker', 'Nginx', 'Playwright', 'Claude Opus (Anthropic)', 'Groq', 'OpenAI', 'Scikit-learn']
   },
@@ -110,6 +112,7 @@ const projects = [
     tags: ['Full-Stack'],
     image: '/assets/canopy.jpg',
     github: 'https://github.com/coderback/Canopy',
+    live: 'https://canopy-xero-demo.vercel.app',
     description: 'Multi-entity financial operations command center where AI proposes structured cross-organization chart of accounts mappings with human approval, deterministic execution, and drift-aware health monitoring.',
     tech: ['Next.js', 'FastAPI', 'Python', 'TypeScript', 'PostgreSQL', 'Docker', 'Xero API']
   },
