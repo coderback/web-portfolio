@@ -1,11 +1,25 @@
 'use client';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Typewriter } from 'react-simple-typewriter';
 import { DocumentArrowDownIcon } from '@heroicons/react/24/solid';
 
+const ROLES = [
+  'Founder of RootLayer',
+  'AI/ML Engineer',
+  'Full-Stack Engineer',
+  'Computer Science Graduate',
+];
+
 export default function Hero() {
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }, []);
+
   return (
     <section
       id="profile"
@@ -42,26 +56,25 @@ export default function Hero() {
 
         {/* Typing Effect */}
         <div className="text-xl font-medium text-gray-700 dark:text-white mb-6 min-h-[2rem]">
-          <Typewriter
-            words={[
-              'Computer Science Graduate',
-              'Full-Stack Engineer',
-              'AI/ML Engineer',
-              'Data Scientist'
-            ]}
-            loop={0}
-            cursor
-            cursorStyle="|"
-            typeSpeed={70}
-            deleteSpeed={40}
-            delaySpeed={1500}
-          />
+          {reducedMotion ? (
+            ROLES[0]
+          ) : (
+            <Typewriter
+              words={ROLES}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={40}
+              delaySpeed={1500}
+            />
+          )}
         </div>
 
         <p className="text-base text-gray-600 dark:text-gray-300 mb-8">
-          I specialize in Artificial Intelligence, with a strong foundation in
-          machine learning, data analysis, and software development. Passionate about developing innovative AI solutions
-          to solve real-world problems.
+          Computer Science graduate specialising in AI/ML and full-stack engineering, and solo founder of
+          RootLayer, an AI-powered web compliance SaaS. I ship production systems end-to-end and bring the same
+          evidence-driven approach to machine learning, forecasting and systems projects.
         </p>
 
         {/* Social Links & CV */}

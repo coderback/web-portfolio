@@ -7,14 +7,21 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
+  // The theme script in layout.js has already applied the saved or system theme.
   useEffect(() => {
-    const root = window.document.documentElement;
-    if (darkMode) {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
+    setDarkMode(document.documentElement.classList.contains('dark'));
+  }, []);
+
+  const toggleDarkMode = () => {
+    const next = !darkMode;
+    setDarkMode(next);
+    document.documentElement.classList.toggle('dark', next);
+    try {
+      localStorage.setItem('theme', next ? 'dark' : 'light');
+    } catch {
+      // Storage can be blocked; the theme still applies for this visit.
     }
-  }, [darkMode]);
+  };
 
   const navLinks = [
     { href: '#profile', label: 'Home' },
@@ -28,7 +35,7 @@ export default function Navbar() {
     <header className="fixed w-full top-0 z-50 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md shadow-sm transition-colors text-black dark:text-white">
       <nav className="flex items-center justify-between px-6 py-4 md:px-16">
         {/* Logo */}
-        <h1 className="text-2xl font-semibold font-spartan text-black dark:text-white">T.O. Ojebiyi</h1>
+        <Link href="#profile" className="text-2xl font-semibold font-spartan text-black dark:text-white">T.O. Ojebiyi</Link>
 
         {/* Desktop Nav Links with Dark Mode Toggle */}
         <ul className="hidden md:flex gap-8 font-medium text-lg items-center">
@@ -55,7 +62,7 @@ export default function Navbar() {
           </li>
           <li>
             <button
-              onClick={() => setDarkMode(!darkMode)}
+              onClick={toggleDarkMode}
               className="p-2 rounded-full border border-gray-300 dark:border-white hover:bg-gray-100 dark:hover:bg-neutral-700 transition"
               aria-label="Toggle dark mode"
             >
@@ -71,7 +78,7 @@ export default function Navbar() {
         {/* Mobile Right Controls */}
         <div className="flex items-center gap-4 md:hidden">
           <button
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={toggleDarkMode}
             className="p-2 rounded-full border border-gray-300 dark:border-white hover:bg-gray-100 dark:hover:bg-neutral-700 transition"
             aria-label="Toggle dark mode"
           >
@@ -83,21 +90,21 @@ export default function Navbar() {
           </button>
 
           {/* Hamburger */}
-          <div
+          <button
+            type="button"
             className={`menu-btn ${isOpen ? 'open' : ''}`}
             onClick={() => setIsOpen(!isOpen)}
-            role="button"
-            tabIndex={0}
             aria-label="Toggle mobile menu"
-            onKeyDown={(e) => e.key === 'Enter' && setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             <div className="menu-btn__burger dark:invert"></div>
-          </div>
+          </button>
         </div>
       </nav>
 
       {/* Hamburger Overlay */}
-      <div className={`menu-links ${isOpen ? 'open' : ''}`}>
+      <div id="mobile-menu" className={`menu-links ${isOpen ? 'open' : ''}`}>
         <ul>
           {navLinks.map((link) => (
             <li key={link.href}>

@@ -32,7 +32,7 @@ export default function Footer() {
           </a>
       </nav>
       <p className="text-sm text-gray-500">
-        &copy; 2025 Timothy Ojebiyi. All Rights Reserved.
+        &copy; {new Date().getFullYear()} Timothy Ojebiyi. All Rights Reserved.
       </p>
     </footer>
   );

@@ -10,9 +10,18 @@ const projects = [
     featured: true,
     tags: ['Full-Stack', 'AI & ML'],
     image: '/assets/rootlayer.jpg',
-    github: 'https://github.com/coderback/RootLayer',
-    description: 'AI-powered web compliance platform delivering automated WCAG 2.2 AA accessibility audits and GDPR/CCPA privacy assessments. Features multi-page Playwright sitemap crawling, axe-core analysis, multi-agent LLM adjudication, scheduled monitoring, and Stripe billing.',
+    live: 'https://rootlayer.app',
+    description: 'AI-powered web compliance SaaS I founded and built solo. Delivers WCAG 2.2 AA accessibility audits and GDPR/CCPA privacy assessments by combining deterministic axe-core and Playwright scanning with LLM adjudication, plus full-site crawling, scheduled monitoring, multi-tenant workspaces and Stripe billing.',
     tech: ['Next.js', 'FastAPI', 'Celery', 'Redis', 'PostgreSQL', 'Playwright', 'axe-core', 'Stripe', 'Docker']
+  },
+  {
+    title: 'ColonoScan - Colon Cancer Detection Platform',
+    featured: true,
+    tags: ['AI & ML', 'Full-Stack'],
+    image: '/assets/prediction.png',
+    github: 'https://github.com/coderback/colonscan',
+    description: 'Final-year dissertation: a containerised medical AI platform combining histopathology and colonoscopy video analysis. Pairs an EfficientNet-B4 UNet++ model for real-time polyp segmentation with explainable AI (Grad-CAM, saliency maps), served through FastAPI/PyTorch microservices.',
+    tech: ['Next.js', 'React', 'Django REST Framework', 'FastAPI', 'PyTorch', 'Celery', 'Redis', 'OpenCV', 'PostgreSQL', 'Docker']
   },
   {
     title: 'Olimpia - High-Performance AI Chess Engine (AI Chessathon)',
@@ -20,8 +29,17 @@ const projects = [
     tags: ['Systems', 'AI & ML'],
     image: '/assets/olimpia-chess.png',
     github: 'https://github.com/coderback/olimpia-aichessathon',
-    description: 'High-performance autonomous chess engine built for the AI Chessathon tournament. Features custom bitboards with magic attack lookups, JIT-compiled Numba search achieving 1.4-2.0M nodes/sec, negamax alpha-beta with PVS, 2M-entry transposition tables, aspiration windows, null-move pruning, and tapered evaluation.',
+    description: 'Chess engine for the Optiver-sponsored AI Chessathon 2026. Joined on Day 3 and climbed from #241 to #82 of 485+ teams in under 48 hours. Compiling the search with Numba lifted throughput from 13,000 to ~2 million nodes/sec, and changes shipped only on statistically significant results, including a time-management fix worth +61 Elo (95% CI [+35, +88], 513 games).',
     tech: ['Python', 'Numba', 'Bitboards', 'Alpha-Beta Search', 'PVS', 'Transposition Tables', 'python-chess']
+  },
+  {
+    title: 'WC2026 - Probabilistic FIFA World Cup Forecasting Engine',
+    featured: true,
+    tags: ['Data Science'],
+    image: '/assets/fifa-wc2026.png',
+    github: 'https://github.com/coderback/fifa-wc2026-prediction-model',
+    description: 'Elo-parameterised Dixon-Coles model fit on ~49,000 international matches since 1872, wrapped in a 50,000-run Monte Carlo bracket simulation. Validated with a leak-free walk-forward backtest against de-vigged bookmaker odds, it ranked the eventual four semifinalists as its top four by champion probability.',
+    tech: ['Python', 'Dixon-Coles', 'Monte Carlo Simulation', 'LightGBM', 'XGBoost', 'Pandas', 'NumPy', 'Jupyter']
   },
   {
     title: 'ControlNet from Scratch - Parity-Verified Diffusion',
@@ -66,38 +84,13 @@ const projects = [
     tech: ['Python', 'PyTorch', 'PyTorch Geometric', 'GNN', 'NetworkX', 'Scikit-learn', 'NumPy']
   },
   {
-    title: 'WC2026 - Probabilistic FIFA World Cup Forecasting Engine',
-    tags: ['Data Science'],
-    image: '/assets/fifa-wc2026.png',
-    github: 'https://github.com/coderback/fifa-wc2026-prediction-model',
-    description: 'Goal-based probabilistic forecasting system for the 2026 FIFA World Cup using Elo-parameterized Dixon-Coles models, gradient-boosted ensemble blending, and 50,000-run Monte Carlo simulations with backtesting against de-vigged bookmaker odds.',
-    tech: ['Python', 'Dixon-Coles', 'Monte Carlo Simulation', 'LightGBM', 'XGBoost', 'Pandas', 'NumPy', 'Jupyter']
-  },
-  {
-    title: 'AirHop Bristol - Break scheduling and Kitchen management system',
-    tags: ['Full-Stack'],
-    image: '/assets/park-dashboard.png',
-    live: 'https://airhop-shift.vercel.app/',
-    description: 'Venue management platform with intelligent break scheduling and kitchen order management',
-    tech: ['React', 'Next.js', 'Node.js', 'Express.js', 'Python', 'FastAPI', 'PostgreSQL',
-  'Redis', 'Docker', 'Tailwind CSS', 'Selenium', 'JWT', 'Scikit-learn']
-  },
-  {
     title: 'Black Hole Simulation - Real-time Relativistic Ray Tracer',
     tags: ['Systems'],
     image: '/assets/blackhole-simulation.png',
-    github: 'https://github.com/coderback/space_simulation',
-    description: 'GPU-accelerated black hole visualization implementing Einstein\'s field equations with real-time ray tracing through curved spacetime. Features Kerr & Schwarzschild metrics, gravitational lensing, accretion disks, and relativistic jets.',
+    github: 'https://github.com/coderback/blackhole',
+    description: 'GPU-accelerated black hole visualization ray tracing light along geodesics through curved spacetime in real time. Features Kerr & Schwarzschild metrics, gravitational lensing, accretion disks, and relativistic jets. Builds on kavan010/black_hole.',
     tech: ['C++17', 'OpenGL 4.3', 'GLSL Compute Shaders', 'CMake', 'GLFW',
-  'GLEW', 'GLM', 'CUDA']
-  },
-  {
-    title: 'ColonScan - Colon Cancer Segmentation & Classification',
-    tags: ['AI & ML', 'Full-Stack'],
-    image: '/assets/prediction.png',
-    github: 'https://github.com/coderback/colonscan',
-    description: 'AI-powered medical imaging analysis for colon cancer detection',
-    tech: ['React', 'Next.js', 'Django', 'PostgreSQL', 'Python', 'Pytorch', 'Tailwind CSS', 'OpenCV', 'Flask', 'Nginx', 'Redis', 'Docker']
+  'GLEW', 'GLM']
   },
   {
     title: 'GRIT - Mobile Fitness & AI Nutrition Coach',
@@ -127,7 +120,7 @@ const projects = [
     title: 'Mountain Rescue Simulation - Graph Neural Network for Multi-Agent Reinforcement Learning (GNN-MARL)',
     tags: ['AI & ML'],
     image: '/assets/mountain_rescue_simulation.png',
-    github: 'https://github.com/coderback/AMAS-resit-portfolio',
+    github: 'https://github.com/coderback/GNN-MARL-Rescue-Robot-Operations',
     description: 'Multi-agent reinforcement learning system for mountain rescue using Graph Neural Networks',
     tech: ['Python', 'PyTorch', 'PyTorch Geometric', 'Mesa', 'Solara', 'NumPy', 'Matplotlib', 'Jupyter'],
   },
@@ -153,7 +146,7 @@ const projects = [
     tags: ['Full-Stack'],
     image: '/assets/uwe-acs.png',
     github: 'https://github.com/coderback/uwe-acs-webapp',
-    live: 'https://uwe-acs.vercel.app/',
+    live: 'https://uweacs.co.uk',
     description: 'Community website built for UWE Bristol ACS society celebrating African and Caribbean culture at UWE Bristol with interactive features and smooth animations',
     tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion']
   },
@@ -170,7 +163,7 @@ const projects = [
     tags: ['Full-Stack'],
     image: '/assets/Medical Dashboard 05_03_2025 17_52_30.png',
     github: 'https://github.com/DinaMetwalli/Patient-Data-Dashboard',
-    description: 'Healthcare data visualization and management system',
+    description: 'Group project: healthcare data visualization and management system',
     tech: ['Electron.js', 'Python', 'Scikit-learn', 'SQLite']
   },
   {

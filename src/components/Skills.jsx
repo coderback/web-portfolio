@@ -45,7 +45,7 @@ const skillsData = [
 const techStackCategories = [
   {
     name: 'Languages',
-    skills: ['Python', 'TypeScript', 'JavaScript', 'C++', 'Rust', 'SQL'],
+    skills: ['Python', 'TypeScript', 'JavaScript', 'C++', 'SQL'],
   },
   {
     name: 'AI & Machine Learning',
@@ -54,10 +54,10 @@ const techStackCategories = [
       'PyTorch Geometric',
       'Hugging Face',
       'CUDA',
-      'TensorFlow',
       'OpenCV',
       'Numba',
       'scikit-learn',
+      'LightGBM',
       'Monte Carlo Methods',
       'Pandas',
       'NumPy',
@@ -85,7 +85,7 @@ const techStackCategories = [
   },
   {
     name: 'Cloud, DevOps & Tools',
-    skills: ['Docker', 'Kubernetes', 'Playwright', 'Git', 'Azure', 'Jupyter'],
+    skills: ['Docker', 'Playwright', 'Git', 'AWS', 'Azure', 'Figma', 'Jupyter'],
   },
 ];
 
@@ -113,7 +113,7 @@ export default function Skills() {
                 <div key={skill} className="flex items-start gap-3.5 text-left w-full">
                   <Image
                     src="/assets/checkmark.png"
-                    alt="checkmark"
+                    alt=""
                     width={24}
                     height={24}
                     className="h-6 w-6 dark:invert flex-shrink-0 mt-0.5"

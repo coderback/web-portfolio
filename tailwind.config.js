@@ -14,8 +14,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
-        spartan: ['League Spartan', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        spartan: ['var(--font-spartan)', 'sans-serif'],
       },
     },
   },
