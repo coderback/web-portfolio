@@ -40,6 +40,7 @@ const projects = [
     tags: ['AI & ML', 'Full-Stack'],
     image: '/assets/prediction.png',
     github: 'https://github.com/coderback/colonscan',
+    live: 'https://colonoscan-demo.vercel.app',
     description: 'Final-year dissertation: a containerised medical AI platform combining histopathology and colonoscopy video analysis. Pairs an EfficientNet-B4 UNet++ model for real-time polyp segmentation with explainable AI (Grad-CAM, saliency maps), served through FastAPI/PyTorch microservices.',
     tech: ['Next.js', 'React', 'Django REST Framework', 'FastAPI', 'PyTorch', 'Celery', 'Redis', 'OpenCV', 'PostgreSQL', 'Docker']
   },
@@ -139,6 +140,7 @@ const projects = [
     tags: ['Full-Stack'],
     image: '/assets/grit.png',
     github: 'https://github.com/coderback/Grit',
+    live: 'https://grit-demo-pink.vercel.app',
     description: 'Full-stack mobile fitness platform combining macro tracking, habit building, activity logging, social challenges, and Claude-powered AI coaching in an opinionated dark-mode mobile experience.',
     tech: ['React Native', 'Expo', 'NestJS', 'Supabase', 'TypeScript', 'Claude AI', 'Tailwind CSS']
   },
@@ -209,6 +211,7 @@ const projects = [
     tags: ['Full-Stack'],
     image: '/assets/Medical Dashboard 05_03_2025 17_52_30.png',
     github: 'https://github.com/DinaMetwalli/Patient-Data-Dashboard',
+    live: 'https://patient-dashboard-demo.vercel.app',
     description: 'Group project: healthcare data visualization and management system',
     tech: ['Electron.js', 'Python', 'Scikit-learn', 'SQLite']
   },
@@ -217,6 +220,7 @@ const projects = [
     tags: ['Full-Stack'],
     image: '/assets/Horizon Restaurants RMS 07_03_2025 13_33_37.png',
     github: 'https://github.com/coderback/Horizon-Restaurant-Management-System',
+    live: 'https://horizon-restaurant-demo.vercel.app',
     description: 'Full-featured restaurant operations and management platform',
     tech: ['Custom Tkinter', 'Python', 'MySQL']
   },
