@@ -15,6 +15,26 @@ const projects = [
     tech: ['Next.js', 'FastAPI', 'Celery', 'Redis', 'PostgreSQL', 'Playwright', 'axe-core', 'Stripe', 'Docker']
   },
   {
+    title: 'Thespis - NPC Minds for Game Developers',
+    featured: true,
+    tags: ['AI & ML', 'Full-Stack'],
+    image: '/assets/thespis.jpg',
+    github: 'https://github.com/coderback/Thespis',
+    live: 'https://thespis-production.up.railway.app',
+    description: 'AI toolkit that gives NPCs minds of their own: they remember, hold beliefs that can be false, and act when the player isn\'t looking. Code decides every action and a language model only voices it, with each line checked against the events and beliefs it cites. In measured runs, 87% of NPC turns needed no model call and the validator blocked 0 of 91 model replies.',
+    tech: ['Python', 'JavaScript', 'Vite', 'Docker', 'Railway', 'LLM Validation']
+  },
+  {
+    title: 'Tubesense - GPS-Free London Underground Noise Mapping',
+    featured: true,
+    tags: ['AI & ML', 'Data Science'],
+    image: '/assets/tubesense.jpg',
+    github: 'https://github.com/coderback/Tubesense',
+    live: 'https://tubesense-production.up.railway.app',
+    description: 'Built for Encode London 2026. Turns Tube rides recorded on a phone into measurements placed between stations without GPS, reaching a median of 1.95 m against 8.2 m for a timetable in a pre-registered test on new rides. A Gemini agent drafts a cited evidence pack from TfL records, a deterministic verifier checks every quote and number, and a human approves it.',
+    tech: ['Python', 'Gemini', 'MongoDB Atlas', 'Dynamic Time Warping', 'Signal Processing', 'Railway']
+  },
+  {
     title: 'ColonoScan - Colon Cancer Detection Platform',
     featured: true,
     tags: ['AI & ML', 'Full-Stack'],
@@ -43,7 +63,6 @@ const projects = [
   },
   {
     title: 'ControlNet from Scratch - Parity-Verified Diffusion',
-    featured: true,
     tags: ['AI & ML'],
     image: '/assets/controlnet.png',
     github: 'https://github.com/coderback/ControlNet-Implementation',
@@ -52,12 +71,27 @@ const projects = [
   },
   {
     title: 'Unsaid - AI 10-K Disclosure Diffing & Removal Detector',
-    featured: true,
     tags: ['AI & ML', 'Full-Stack'],
     image: '/assets/unsaid.png',
     github: 'https://github.com/coderback/Unsaid',
     description: 'AI-powered 10-K risk disclosure analysis engine comparing SEC Item 1A/7A filings across years to surface removed, softened, and new risk language using semantic alignment and LLM judgment.',
     tech: ['Next.js', 'FastAPI', 'Python', 'TypeScript', 'Tailwind CSS', 'LLM', 'SEC EDGAR']
+  },
+  {
+    title: 'Fair on Paper - Pricing a Prop-Firm Challenge',
+    tags: ['Data Science'],
+    image: '/assets/fair-on-paper.png',
+    github: 'https://github.com/coderback/prop-challenge-pricing',
+    description: 'Working paper and full reproduction package pricing a retail prop firm\'s published evaluation contract on twenty years of intraday index prices at measured broker costs, with every hypothesis fixed and committed before its run.',
+    tech: ['Python', 'NumPy', 'Pandas', 'SciPy', 'Backward Induction', 'Pre-registration', 'LaTeX']
+  },
+  {
+    title: 'Zhang (2025) Replication - Macro Alpha from News Sentiment',
+    tags: ['Data Science'],
+    image: '/assets/zhang-replication.png',
+    github: 'https://github.com/coderback/zhang2025-replication',
+    description: 'Pre-registered replication of a paper reporting Sharpe ratios of 4.65 to 5.87 from FinBERT sentiment on GDELT headlines. Result: not replicated. All 18 asset, timing and model combinations fall between -1.00 and +0.02, and none beats random-sign trading at the same costs.',
+    tech: ['Python', 'FinBERT', 'XGBoost', 'GDELT', 'scikit-learn', 'Pandas', 'Pre-registration']
   },
   {
     title: 'Windrush - AI Career Advisor',
@@ -140,6 +174,15 @@ const projects = [
     live: 'https://algorender.vercel.app/',
     description: 'Interactive visualization tool for data structures and algorithms',
     tech: ['React', 'Next.js', 'TypeScript', 'D3.js', 'Tailwind CSS']
+  },
+  {
+    title: 'Greek Mythos - Archetype Personality Assessment',
+    tags: ['Full-Stack'],
+    image: '/assets/greek-mythos.jpg',
+    github: 'https://github.com/coderback/Mythos-Person',
+    live: 'https://mythos-person.vercel.app',
+    description: 'A 24-question forced-choice assessment that maps personality across eight dimensions to one of fifteen Greek mythological archetypes.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS']
   },
   {
     title: 'UWE African Caribbean Society - Community Website',
