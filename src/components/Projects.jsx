@@ -112,7 +112,7 @@ const projects = [
   {
     title: 'Canopy - Multi-Entity Command Centre for Xero',
     tags: ['Full-Stack'],
-    image: '/assets/canopy.jpg',
+    image: '/assets/canopy-gaps-grid.jpg',
     github: 'https://github.com/coderback/Canopy',
     live: 'https://canopy-xero-demo.vercel.app',
     description: 'Multi-entity financial operations command center where AI proposes structured cross-organization chart of accounts mappings with human approval, deterministic execution, and drift-aware health monitoring.',
@@ -167,7 +167,7 @@ const projects = [
   {
     title: 'Mountain Rescue Simulation - Graph Neural Network for Multi-Agent Reinforcement Learning (GNN-MARL)',
     tags: ['AI & ML'],
-    image: '/assets/mountain_rescue_simulation.png',
+    image: '/assets/mountain-rescue-replay.jpg',
     github: 'https://github.com/coderback/GNN-MARL-Rescue-Robot-Operations',
     live: 'https://mountain-rescue-replay.vercel.app',
     description: 'Multi-agent mountain rescue simulation comparing rule-based coordination with a Graph Neural Network reinforcement learning mode. The replay shows recorded runs of each mode and reports the training results as they are: the learned policy did not beat the rule-based coordination.',
@@ -185,7 +185,7 @@ const projects = [
   {
     title: 'Algorender - Data structure & Algorithms Visualiser',
     tags: ['Full-Stack'],
-    image: '/assets/algorender.png',
+    image: '/assets/algorender-home.jpg',
     github: 'https://github.com/coderback/Algorender',
     live: 'https://algorender.vercel.app/',
     description: 'Interactive visualization tool for data structures and algorithms',
