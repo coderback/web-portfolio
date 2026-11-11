@@ -65,40 +65,14 @@ const projects = [
     tech: ['Python', 'Dixon-Coles', 'Monte Carlo Simulation', 'LightGBM', 'XGBoost', 'Pandas', 'NumPy', 'Jupyter']
   },
   {
-    title: 'ControlNet from Scratch - Parity-Verified Diffusion',
-    tags: ['AI & ML'],
-    image: '/assets/controlnet.png',
-    github: 'https://github.com/coderback/ControlNet-Implementation',
-    live: 'https://controlnet-canny-gallery.vercel.app',
-    description: 'From-scratch, mathematical parity-verified ControlNet for Stable Diffusion v1.5 with end-to-end training pipeline, zero-convolution growth validation, and COCO Canny conditioning.',
-    tech: ['Python', 'PyTorch', 'HuggingFace Diffusers', 'Stable Diffusion', 'OpenCV', 'Jupyter', 'CUDA']
-  },
-  {
-    title: 'Unsaid - AI 10-K Disclosure Diffing & Removal Detector',
-    tags: ['AI & ML', 'Full-Stack'],
-    image: '/assets/unsaid.png',
-    github: 'https://github.com/coderback/Unsaid',
-    live: 'https://unsaid-10k-demo.vercel.app',
-    description: 'AI-powered 10-K risk disclosure analysis engine comparing SEC Item 1A/7A filings across years to surface removed, softened, and new risk language using semantic alignment and LLM judgment.',
-    tech: ['Next.js', 'FastAPI', 'Python', 'TypeScript', 'Tailwind CSS', 'LLM', 'SEC EDGAR']
-  },
-  {
-    title: 'Fair on Paper - Pricing a Prop-Firm Challenge',
-    tags: ['Data Science'],
-    image: '/assets/fair-on-paper.png',
-    github: 'https://github.com/coderback/prop-challenge-pricing',
-    live: 'https://fair-on-paper.vercel.app',
-    description: 'Working paper and full reproduction package pricing a retail prop firm\'s published evaluation contract on twenty years of intraday index prices at measured broker costs, with every hypothesis fixed and committed before its run.',
-    tech: ['Python', 'NumPy', 'Pandas', 'SciPy', 'Backward Induction', 'Pre-registration', 'LaTeX']
-  },
-  {
-    title: 'Zhang (2025) Replication - Macro Alpha from News Sentiment',
-    tags: ['Data Science'],
-    image: '/assets/zhang-replication.png',
-    github: 'https://github.com/coderback/zhang2025-replication',
-    live: 'https://zhang2025-replication.vercel.app',
-    description: 'Pre-registered replication of a paper reporting Sharpe ratios of 4.65 to 5.87 from FinBERT sentiment on GDELT headlines. Result: not replicated. All 18 asset, timing and model combinations fall between -1.00 and +0.02, and none beats random-sign trading at the same costs.',
-    tech: ['Python', 'FinBERT', 'XGBoost', 'GDELT', 'scikit-learn', 'Pandas', 'Pre-registration']
+    title: 'Black Hole Simulation - Real-time Relativistic Ray Tracer',
+    tags: ['Systems'],
+    image: '/assets/blackhole-simulation.png',
+    github: 'https://github.com/coderback/blackhole',
+    live: 'https://blackhole-webgl.vercel.app',
+    description: 'GPU-accelerated black hole visualization ray tracing light along Schwarzschild geodesics in real time, with a Kerr-inspired spin correction, gravitational lensing, accretion disks and relativistic jets. C++/OpenGL compute shaders with a WebGL2 port you can orbit in the browser. Builds on kavan010/black_hole.',
+    tech: ['C++17', 'OpenGL 4.3', 'GLSL Compute Shaders', 'CMake', 'GLFW',
+  'GLEW', 'GLM']
   },
   {
     title: 'Windrush - AI Career Advisor',
@@ -110,13 +84,40 @@ const projects = [
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'Python', 'Docker', 'Nginx', 'Playwright', 'Claude Opus (Anthropic)', 'Groq', 'OpenAI', 'Scikit-learn']
   },
   {
-    title: 'Canopy - Multi-Entity Command Centre for Xero',
+    title: 'ControlNet from Scratch - Parity-Verified Diffusion',
+    tags: ['AI & ML'],
+    image: '/assets/controlnet.png',
+    github: 'https://github.com/coderback/ControlNet-Implementation',
+    live: 'https://controlnet-canny-gallery.vercel.app',
+    description: 'From-scratch, mathematical parity-verified ControlNet for Stable Diffusion v1.5 with end-to-end training pipeline, zero-convolution growth validation, and COCO Canny conditioning.',
+    tech: ['Python', 'PyTorch', 'HuggingFace Diffusers', 'Stable Diffusion', 'OpenCV', 'Jupyter', 'CUDA']
+  },
+  {
+    title: 'Algorender - Data structure & Algorithms Visualiser',
     tags: ['Full-Stack'],
-    image: '/assets/canopy-gaps-grid.jpg',
-    github: 'https://github.com/coderback/Canopy',
-    live: 'https://canopy-xero-demo.vercel.app',
-    description: 'Multi-entity financial operations command center where AI proposes structured cross-organization chart of accounts mappings with human approval, deterministic execution, and drift-aware health monitoring.',
-    tech: ['Next.js', 'FastAPI', 'Python', 'TypeScript', 'PostgreSQL', 'Docker', 'Xero API']
+    image: '/assets/algorender-home.jpg',
+    github: 'https://github.com/coderback/Algorender',
+    live: 'https://algorender.vercel.app/',
+    description: 'Interactive visualization tool for data structures and algorithms',
+    tech: ['React', 'Next.js', 'TypeScript', 'D3.js', 'Tailwind CSS']
+  },
+  {
+    title: 'Unsaid - AI 10-K Disclosure Diffing & Removal Detector',
+    tags: ['AI & ML', 'Full-Stack'],
+    image: '/assets/unsaid.png',
+    github: 'https://github.com/coderback/Unsaid',
+    live: 'https://unsaid-10k-demo.vercel.app',
+    description: 'AI-powered 10-K risk disclosure analysis engine comparing SEC Item 1A/7A filings across years to surface removed, softened, and new risk language using semantic alignment and LLM judgment.',
+    tech: ['Next.js', 'FastAPI', 'Python', 'TypeScript', 'Tailwind CSS', 'LLM', 'SEC EDGAR']
+  },
+  {
+    title: 'Premier League Forecasting System',
+    tags: ['Data Science'],
+    image: '/assets/pl-season-table.jpg',
+    github: 'https://github.com/coderback/premier-league-forcast-system',
+    live: 'https://pl-forecast-ledger.vercel.app',
+    description: 'Walk-forward Premier League match-outcome and season simulation engine featuring production Dixon-Coles goal expectation models, Monte Carlo table projections, and betting market benchmark validation.',
+    tech: ['Python', 'Dixon-Coles', 'Monte Carlo Simulation', 'Pandas', 'NumPy', 'Scikit-learn']
   },
   {
     title: 'cambium - Structure-Conditioned Graph-ML Core',
@@ -128,14 +129,40 @@ const projects = [
     tech: ['Python', 'PyTorch', 'PyTorch Geometric', 'GNN', 'NetworkX', 'Scikit-learn', 'NumPy']
   },
   {
-    title: 'Black Hole Simulation - Real-time Relativistic Ray Tracer',
-    tags: ['Systems'],
-    image: '/assets/blackhole-simulation.png',
-    github: 'https://github.com/coderback/blackhole',
-    live: 'https://blackhole-webgl.vercel.app',
-    description: 'GPU-accelerated black hole visualization ray tracing light along Schwarzschild geodesics in real time, with a Kerr-inspired spin correction, gravitational lensing, accretion disks and relativistic jets. C++/OpenGL compute shaders with a WebGL2 port you can orbit in the browser. Builds on kavan010/black_hole.',
-    tech: ['C++17', 'OpenGL 4.3', 'GLSL Compute Shaders', 'CMake', 'GLFW',
-  'GLEW', 'GLM']
+    title: 'Canopy - Multi-Entity Command Centre for Xero',
+    tags: ['Full-Stack'],
+    image: '/assets/canopy-gaps-grid.jpg',
+    github: 'https://github.com/coderback/Canopy',
+    live: 'https://canopy-xero-demo.vercel.app',
+    description: 'Multi-entity financial operations command center where AI proposes structured cross-organization chart of accounts mappings with human approval, deterministic execution, and drift-aware health monitoring.',
+    tech: ['Next.js', 'FastAPI', 'Python', 'TypeScript', 'PostgreSQL', 'Docker', 'Xero API']
+  },
+  {
+    title: 'Zhang (2025) Replication - Macro Alpha from News Sentiment',
+    tags: ['Data Science'],
+    image: '/assets/zhang-replication.png',
+    github: 'https://github.com/coderback/zhang2025-replication',
+    live: 'https://zhang2025-replication.vercel.app',
+    description: 'Pre-registered replication of a paper reporting Sharpe ratios of 4.65 to 5.87 from FinBERT sentiment on GDELT headlines. Result: not replicated. All 18 asset, timing and model combinations fall between -1.00 and +0.02, and none beats random-sign trading at the same costs.',
+    tech: ['Python', 'FinBERT', 'XGBoost', 'GDELT', 'scikit-learn', 'Pandas', 'Pre-registration']
+  },
+  {
+    title: 'Fair on Paper - Pricing a Prop-Firm Challenge',
+    tags: ['Data Science'],
+    image: '/assets/fair-on-paper.png',
+    github: 'https://github.com/coderback/prop-challenge-pricing',
+    live: 'https://fair-on-paper.vercel.app',
+    description: 'Working paper and full reproduction package pricing a retail prop firm\'s published evaluation contract on twenty years of intraday index prices at measured broker costs, with every hypothesis fixed and committed before its run.',
+    tech: ['Python', 'NumPy', 'Pandas', 'SciPy', 'Backward Induction', 'Pre-registration', 'LaTeX']
+  },
+  {
+    title: 'Mountain Rescue Simulation - Graph Neural Network for Multi-Agent Reinforcement Learning (GNN-MARL)',
+    tags: ['AI & ML'],
+    image: '/assets/mountain-rescue-replay.jpg',
+    github: 'https://github.com/coderback/GNN-MARL-Rescue-Robot-Operations',
+    live: 'https://mountain-rescue-replay.vercel.app',
+    description: 'Multi-agent mountain rescue simulation comparing rule-based coordination with a Graph Neural Network reinforcement learning mode. The replay shows recorded runs of each mode and reports the training results as they are: the learned policy did not beat the rule-based coordination.',
+    tech: ['Python', 'PyTorch', 'PyTorch Geometric', 'Mesa', 'Solara', 'NumPy', 'Matplotlib', 'Jupyter'],
   },
   {
     title: 'GRIT - Mobile Fitness & AI Nutrition Coach',
@@ -165,31 +192,13 @@ const projects = [
     tech: ['Python', 'Scikit-learn', 'XGBoost', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Imbalanced-learn', 'Jupyter']
   },
   {
-    title: 'Mountain Rescue Simulation - Graph Neural Network for Multi-Agent Reinforcement Learning (GNN-MARL)',
-    tags: ['AI & ML'],
-    image: '/assets/mountain-rescue-replay.jpg',
-    github: 'https://github.com/coderback/GNN-MARL-Rescue-Robot-Operations',
-    live: 'https://mountain-rescue-replay.vercel.app',
-    description: 'Multi-agent mountain rescue simulation comparing rule-based coordination with a Graph Neural Network reinforcement learning mode. The replay shows recorded runs of each mode and reports the training results as they are: the learned policy did not beat the rule-based coordination.',
-    tech: ['Python', 'PyTorch', 'PyTorch Geometric', 'Mesa', 'Solara', 'NumPy', 'Matplotlib', 'Jupyter'],
-  },
-  {
-    title: 'Premier League Forecasting System',
-    tags: ['Data Science'],
-    image: '/assets/pl-season-table.jpg',
-    github: 'https://github.com/coderback/premier-league-forcast-system',
-    live: 'https://pl-forecast-ledger.vercel.app',
-    description: 'Walk-forward Premier League match-outcome and season simulation engine featuring production Dixon-Coles goal expectation models, Monte Carlo table projections, and betting market benchmark validation.',
-    tech: ['Python', 'Dixon-Coles', 'Monte Carlo Simulation', 'Pandas', 'NumPy', 'Scikit-learn']
-  },
-  {
-    title: 'Algorender - Data structure & Algorithms Visualiser',
-    tags: ['Full-Stack'],
-    image: '/assets/algorender-home.jpg',
-    github: 'https://github.com/coderback/Algorender',
-    live: 'https://algorender.vercel.app/',
-    description: 'Interactive visualization tool for data structures and algorithms',
-    tech: ['React', 'Next.js', 'TypeScript', 'D3.js', 'Tailwind CSS']
+    title: 'TobiOS - Operating System Simulation',
+    tags: ['Systems'],
+    image: '/assets/TobiOS.png',
+    github: 'https://github.com/coderback/TobiOS',
+    live: 'https://tobios-wasm.vercel.app',
+    description: 'Operating system simulation in C++ that demonstrates core OS concepts. The real shell runs in your browser, compiled to WebAssembly.',
+    tech: ['C++', 'CMake', 'WebAssembly', 'Emscripten'],
   },
   {
     title: 'UWE African Caribbean Society - Community Website',
@@ -199,16 +208,7 @@ const projects = [
     live: 'https://uweacs.co.uk',
     description: 'Community website built for UWE Bristol ACS society celebrating African and Caribbean culture at UWE Bristol with interactive features and smooth animations',
     tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion']
-  },
-  {
-    title: 'TobiOS - Operating System Simulation',
-    tags: ['Systems'],
-    image: '/assets/TobiOS.png',
-    github: 'https://github.com/coderback/TobiOS',
-    live: 'https://tobios-wasm.vercel.app',
-    description: 'Operating system simulation in C++ that demonstrates core OS concepts. The real shell runs in your browser, compiled to WebAssembly.',
-    tech: ['C++', 'CMake', 'WebAssembly', 'Emscripten'],
-  },
+  }
 ];
 
 const FILTERS = ['All', 'AI & ML', 'Data Science', 'Full-Stack', 'Systems'];
