@@ -209,24 +209,6 @@ const projects = [
     description: 'Operating system simulation in C++ that demonstrates core OS concepts. The real shell runs in your browser, compiled to WebAssembly.',
     tech: ['C++', 'CMake', 'WebAssembly', 'Emscripten'],
   },
-  {
-    title: 'Patient Data Dashboard',
-    tags: ['Full-Stack'],
-    image: '/assets/Medical Dashboard 05_03_2025 17_52_30.png',
-    github: 'https://github.com/DinaMetwalli/Patient-Data-Dashboard',
-    live: 'https://patient-dashboard-demo.vercel.app',
-    description: 'Group project: healthcare data visualization and management system',
-    tech: ['Electron.js', 'Python', 'Scikit-learn', 'SQLite']
-  },
-  {
-    title: 'Restaurant Management System',
-    tags: ['Full-Stack'],
-    image: '/assets/Horizon Restaurants RMS 07_03_2025 13_33_37.png',
-    github: 'https://github.com/coderback/Horizon-Restaurant-Management-System',
-    live: 'https://horizon-restaurant-demo.vercel.app',
-    description: 'Full-featured restaurant operations and management platform',
-    tech: ['Custom Tkinter', 'Python', 'MySQL']
-  },
 ];
 
 const FILTERS = ['All', 'AI & ML', 'Data Science', 'Full-Stack', 'Systems'];
