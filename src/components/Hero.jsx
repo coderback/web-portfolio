@@ -7,10 +7,10 @@ import { Typewriter } from 'react-simple-typewriter';
 import { DocumentArrowDownIcon } from '@heroicons/react/24/solid';
 
 const ROLES = [
-  'Founder of RootLayer',
-  'AI/ML Engineer',
-  'Full-Stack Engineer',
   'Computer Science Graduate',
+  'Full-Stack Engineer',
+  'AI/ML Engineer',
+  'Data Scientist',
 ];
 
 export default function Hero() {
