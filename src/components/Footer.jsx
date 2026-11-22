@@ -5,6 +5,7 @@ export default function Footer() {
       { href: '#profile', label: 'Home' },
       { href: '#about-experience', label: 'About' },
       { href: '#skills', label: 'Skills' },
+      { href: '#research', label: 'Research' },
       { href: '#projects', label: 'Projects' },
       { href: '#contact', label: 'Contact' },
   ];

@@ -138,24 +138,6 @@ const projects = [
     tech: ['Next.js', 'FastAPI', 'Python', 'TypeScript', 'PostgreSQL', 'Docker', 'Xero API']
   },
   {
-    title: 'Zhang (2025) Replication - Macro Alpha from News Sentiment',
-    tags: ['Data Science'],
-    image: '/assets/zhang-replication.png',
-    github: 'https://github.com/coderback/zhang2025-replication',
-    live: 'https://zhang2025-replication.vercel.app',
-    description: 'Pre-registered replication of a paper reporting Sharpe ratios of 4.65 to 5.87 from FinBERT sentiment on GDELT headlines. Result: not replicated. All 18 asset, timing and model combinations fall between -1.00 and +0.02, and none beats random-sign trading at the same costs.',
-    tech: ['Python', 'FinBERT', 'XGBoost', 'GDELT', 'scikit-learn', 'Pandas', 'Pre-registration']
-  },
-  {
-    title: 'Fair on Paper - Pricing a Prop-Firm Challenge',
-    tags: ['Data Science'],
-    image: '/assets/fair-on-paper.png',
-    github: 'https://github.com/coderback/prop-challenge-pricing',
-    live: 'https://fair-on-paper.vercel.app',
-    description: 'Working paper and full reproduction package pricing a retail prop firm\'s published evaluation contract on twenty years of intraday index prices at measured broker costs, with every hypothesis fixed and committed before its run.',
-    tech: ['Python', 'NumPy', 'Pandas', 'SciPy', 'Backward Induction', 'Pre-registration', 'LaTeX']
-  },
-  {
     title: 'Mountain Rescue Simulation - Graph Neural Network for Multi-Agent Reinforcement Learning (GNN-MARL)',
     tags: ['AI & ML'],
     image: '/assets/mountain-rescue-replay.jpg',

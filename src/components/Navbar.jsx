@@ -27,18 +27,19 @@ export default function Navbar() {
     { href: '#profile', label: 'Home' },
     { href: '#about-experience', label: 'About' },
     { href: '#skills', label: 'Skills' },
+    { href: '#research', label: 'Research' },
     { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' },
   ];
 
   return (
     <header className="fixed w-full top-0 z-50 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md shadow-sm transition-colors text-black dark:text-white">
-      <nav className="flex items-center justify-between px-6 py-4 md:px-16">
+      <nav className="flex items-center justify-between px-6 py-4 md:px-8 lg:px-16">
         {/* Logo */}
         <Link href="#profile" className="text-2xl font-semibold font-spartan text-black dark:text-white">T.O. Ojebiyi</Link>
 
         {/* Desktop Nav Links with Dark Mode Toggle */}
-        <ul className="hidden md:flex gap-8 font-medium text-lg items-center">
+        <ul className="hidden md:flex md:gap-4 lg:gap-8 font-medium md:text-base lg:text-lg items-center">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
