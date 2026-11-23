@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { LINKS, PAPERS } from '../content/portfolio';
+import { ESSAYS, LINKS, PAPERS } from '../content/portfolio';
 
 // Papers sit on yellow in both themes, so their colours are fixed rather than theme tokens.
 export default function Research() {
@@ -62,6 +62,52 @@ export default function Research() {
           </article>
         ))}
       </div>
+
+      {ESSAYS.map((essay) => (
+        <article key={essay.title} className="nb-card flex flex-wrap gap-6 bg-paper p-5 sm:p-7">
+          <div className="min-w-0 flex-[3_1_480px]">
+            <p className="mb-3 flex flex-wrap gap-2">
+              <span className="stk bg-yellow text-on-yellow">ESSAY</span>
+              <span className="stk bg-tint uppercase text-ink">
+                {essay.venue} · {essay.date}
+              </span>
+              <span className="stk bg-paper uppercase text-ink">{essay.length}</span>
+            </p>
+            <h3 className="text-3xl font-bold leading-tight sm:text-4xl">{essay.title}</h3>
+            <p className="mt-1.5 text-lg italic text-muted">{essay.subtitle}</p>
+            <p className="mt-4 text-base leading-relaxed sm:text-[17px]">{essay.summary}</p>
+            <p className="mt-5 flex flex-wrap gap-2.5">
+              {essay.links.map((link, index) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`nb-btn !min-h-[40px] !px-3 text-xs uppercase ${index === 0 ? 'nb-btn-primary' : 'nb-btn-plain'}`}
+                >
+                  {link.label} ↗
+                </a>
+              ))}
+            </p>
+          </div>
+
+          <aside className="min-w-0 flex-[2_1_320px] border-[3px] border-line bg-tint p-5">
+            <p className="font-mono text-xs font-bold uppercase">Postscript · November 2026</p>
+            <p className="mt-2 text-[15px] leading-relaxed">{essay.postscript}</p>
+            <dl className="mt-4 flex flex-col gap-2.5">
+              {essay.stats.map((stat) => (
+                <div key={stat.label} className="flex items-baseline gap-3 border-t-2 border-line pt-2">
+                  <dt className="sr-only">{stat.label}</dt>
+                  <dd className="flex flex-wrap items-baseline gap-x-3">
+                    <span className="font-mono text-lg font-bold text-cobalt">{stat.value}</span>
+                    <span className="text-sm text-muted">{stat.label}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
+        </article>
+      ))}
     </section>
   );
 }

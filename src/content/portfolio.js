@@ -302,6 +302,30 @@ export const PAPERS = [
   },
 ];
 
+export const ESSAYS = [
+  {
+    title: 'The Silence of the Signals',
+    subtitle: 'On the Upstream Migration of Edge in the Age of Agentic Finance',
+    venue: 'Move 37 · Essay track',
+    date: 'June 2026',
+    length: '≈ 870 words',
+    summary:
+      'When every market participant reads the same filings with the same models, faster processing stops being an edge. The essay argues that edge moves upstream, to asking the question nobody else asks, and uses the Lazy Prices anomaly as the example: the signal is in what a company decides to stop telling you.',
+    postscript:
+      'I have since tested a version of this idea with Unsaid. Its return signal did not hold up: it failed a multiplicity correction, reversed sign on a held-out year, and plain word-frequency similarity beat the LLM classifier on every cut. The central mechanism remains a hypothesis I have not been able to confirm.',
+    stats: [
+      { value: '321', label: 'consecutive 10-K filing pairs tested' },
+      { value: '57', label: 'US banks, FY2019–2025' },
+      { value: 'Not confirmed', label: 'the essay’s central mechanism' },
+    ],
+    links: [
+      { label: 'Read the essay (PDF)', href: '/documents/the-silence-of-the-signals.pdf' },
+      { label: 'Unsaid demo', href: 'https://unsaid-10k-demo.vercel.app' },
+      { label: 'Unsaid code', href: 'https://github.com/coderback/Unsaid' },
+    ],
+  },
+];
+
 export const EXPERIENCE = [
   {
     org: 'RootLayer Ltd',
