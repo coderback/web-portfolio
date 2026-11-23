@@ -34,8 +34,8 @@ export const metadata = {
   },
 };
 
-// Runs before first paint so a saved or system dark theme doesn't flash light.
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`;
+// Light is the default. Runs before first paint so a saved dark choice doesn't flash light.
+const themeScript = `(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})()`;
 
 export default function RootLayout({ children }) {
   return (

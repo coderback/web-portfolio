@@ -39,6 +39,19 @@ export const FEATURED = [
     tech: ['Next.js', 'FastAPI', 'Celery', 'Redis', 'PostgreSQL', 'Playwright', 'axe-core', 'Stripe', 'Docker'],
   },
   {
+    id: 'algorender',
+    title: 'Algorender',
+    subtitle: 'Data structure & algorithms visualiser',
+    tags: ['Full-Stack'],
+    image: '/assets/algorender-home.jpg',
+    github: 'https://github.com/coderback/Algorender',
+    live: 'https://algorender.vercel.app/',
+    result: 'Sorting, graphs, trees, DP and ML, step by step',
+    blurb: 'Step through algorithms forwards and backwards, with the code and the reason for every move, then predict the next step.',
+    description: 'Interactive visualization tool for data structures and algorithms.',
+    tech: ['React', 'Next.js', 'TypeScript', 'D3.js', 'Tailwind CSS'],
+  },
+  {
     id: 'thespis',
     title: 'Thespis',
     subtitle: 'NPC minds for game developers',
@@ -51,34 +64,6 @@ export const FEATURED = [
     description:
       "AI toolkit that gives NPCs minds of their own: they remember, hold beliefs that can be false, and act when the player isn't looking. Code decides every action and a language model only voices it, with each line checked against the events and beliefs it cites. In measured runs, 87% of NPC turns needed no model call and the validator blocked 0 of 91 model replies.",
     tech: ['Python', 'JavaScript', 'Vite', 'Docker', 'Railway', 'LLM Validation'],
-  },
-  {
-    id: 'tubesense',
-    title: 'Tubesense',
-    subtitle: 'GPS-free London Underground noise mapping',
-    tags: ['AI & ML', 'Data Science'],
-    image: '/assets/tubesense.jpg',
-    github: 'https://github.com/coderback/Tubesense',
-    live: 'https://tubesense-production.up.railway.app',
-    result: '1.95 m median vs 8.2 m for a timetable',
-    blurb: 'Places phone recordings of Tube rides between stations without GPS, in a pre-registered test on new rides.',
-    description:
-      'Built for Encode London 2026. Turns Tube rides recorded on a phone into measurements placed between stations without GPS, reaching a median of 1.95 m against 8.2 m for a timetable in a pre-registered test on new rides. A Gemini agent drafts a cited evidence pack from TfL records, a deterministic verifier checks every quote and number, and a human approves it.',
-    tech: ['Python', 'Gemini', 'MongoDB Atlas', 'Dynamic Time Warping', 'Signal Processing', 'Railway'],
-  },
-  {
-    id: 'colonoscan',
-    title: 'ColonoScan',
-    subtitle: 'Colon cancer detection platform',
-    tags: ['AI & ML', 'Full-Stack'],
-    image: '/assets/prediction.png',
-    github: 'https://github.com/coderback/colonscan',
-    live: 'https://colonoscan-demo.vercel.app',
-    result: 'Real-time polyp segmentation + Grad-CAM',
-    blurb: 'Final-year dissertation combining histopathology and colonoscopy video analysis in one platform.',
-    description:
-      'Final-year dissertation: a containerised medical AI platform combining histopathology and colonoscopy video analysis. Pairs an EfficientNet-B4 UNet++ model for real-time polyp segmentation with explainable AI (Grad-CAM, saliency maps), served through FastAPI/PyTorch microservices.',
-    tech: ['Next.js', 'React', 'Django REST Framework', 'FastAPI', 'PyTorch', 'Celery', 'Redis', 'OpenCV', 'PostgreSQL', 'Docker'],
   },
   {
     id: 'olimpia',
@@ -108,11 +93,45 @@ export const FEATURED = [
       'Elo-parameterised Dixon-Coles model fit on ~49,000 international matches since 1872, wrapped in a 50,000-run Monte Carlo bracket simulation. Validated with a leak-free walk-forward backtest against de-vigged bookmaker odds, it ranked the eventual four semifinalists as its top four by champion probability.',
     tech: ['Python', 'Dixon-Coles', 'Monte Carlo Simulation', 'LightGBM', 'XGBoost', 'Pandas', 'NumPy', 'Jupyter'],
   },
+  {
+    id: 'controlnet',
+    title: 'ControlNet from Scratch',
+    subtitle: 'Parity-verified diffusion',
+    tags: ['AI & ML'],
+    image: '/assets/controlnet.png',
+    github: 'https://github.com/coderback/ControlNet-Implementation',
+    live: 'https://controlnet-canny-gallery.vercel.app',
+    result: 'Parity-verified ControlNet for Stable Diffusion v1.5',
+    blurb: 'Built from scratch, with an end-to-end training pipeline, zero-convolution growth validation and COCO Canny conditioning.',
+    description:
+      'From-scratch, mathematical parity-verified ControlNet for Stable Diffusion v1.5 with end-to-end training pipeline, zero-convolution growth validation, and COCO Canny conditioning.',
+    tech: ['Python', 'PyTorch', 'HuggingFace Diffusers', 'Stable Diffusion', 'OpenCV', 'Jupyter', 'CUDA'],
+  },
 ];
 
 export const PROJECT_FILTERS = ['All', 'AI & ML', 'Data Science', 'Full-Stack', 'Systems'];
 
 export const OTHER_PROJECTS = [
+  {
+    title: 'Tubesense',
+    tags: ['AI & ML', 'Data Science'],
+    image: '/assets/tubesense.jpg',
+    github: 'https://github.com/coderback/Tubesense',
+    live: 'https://tubesense-production.up.railway.app',
+    description:
+      'Built for Encode London 2026. Turns Tube rides recorded on a phone into measurements placed between stations without GPS, reaching a median of 1.95 m against 8.2 m for a timetable in a pre-registered test on new rides. A Gemini agent drafts a cited evidence pack from TfL records, a deterministic verifier checks every quote and number, and a human approves it.',
+    tech: ['Python', 'Gemini', 'MongoDB Atlas', 'Dynamic Time Warping', 'Signal Processing', 'Railway'],
+  },
+  {
+    title: 'ColonoScan',
+    tags: ['AI & ML', 'Full-Stack'],
+    image: '/assets/prediction.png',
+    github: 'https://github.com/coderback/colonscan',
+    live: 'https://colonoscan-demo.vercel.app',
+    description:
+      'Final-year dissertation: a containerised medical AI platform combining histopathology and colonoscopy video analysis. Pairs an EfficientNet-B4 UNet++ model for real-time polyp segmentation with explainable AI (Grad-CAM, saliency maps), served through FastAPI/PyTorch microservices.',
+    tech: ['Next.js', 'React', 'Django REST Framework', 'FastAPI', 'PyTorch', 'Celery', 'Redis', 'OpenCV', 'PostgreSQL', 'Docker'],
+  },
   {
     title: 'Black Hole Simulation',
     tags: ['Systems'],
@@ -132,25 +151,6 @@ export const OTHER_PROJECTS = [
     description:
       'Agentic career advisor that parses CVs, scores each skill against O*NET AI automation exposure data, ranks matched jobs by a fit-vs-risk composite score, generates tailored cover letters, and autonomously submits applications via browser automation with a live CDP screencast feed.',
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'Python', 'Docker', 'Nginx', 'Playwright', 'Claude Opus (Anthropic)', 'Groq', 'OpenAI', 'Scikit-learn'],
-  },
-  {
-    title: 'ControlNet from Scratch',
-    tags: ['AI & ML'],
-    image: '/assets/controlnet.png',
-    github: 'https://github.com/coderback/ControlNet-Implementation',
-    live: 'https://controlnet-canny-gallery.vercel.app',
-    description:
-      'From-scratch, mathematical parity-verified ControlNet for Stable Diffusion v1.5 with end-to-end training pipeline, zero-convolution growth validation, and COCO Canny conditioning.',
-    tech: ['Python', 'PyTorch', 'HuggingFace Diffusers', 'Stable Diffusion', 'OpenCV', 'Jupyter', 'CUDA'],
-  },
-  {
-    title: 'Algorender',
-    tags: ['Full-Stack'],
-    image: '/assets/algorender-home.jpg',
-    github: 'https://github.com/coderback/Algorender',
-    live: 'https://algorender.vercel.app/',
-    description: 'Interactive visualization tool for data structures and algorithms.',
-    tech: ['React', 'Next.js', 'TypeScript', 'D3.js', 'Tailwind CSS'],
   },
   {
     title: 'Unsaid',
