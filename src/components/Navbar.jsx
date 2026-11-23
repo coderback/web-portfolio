@@ -1,7 +1,15 @@
 'use client';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
+import { useEffect, useState } from 'react';
+import { Bars3Icon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import { LINKS } from '../content/portfolio';
+
+const NAV_LINKS = [
+  { href: '#work', label: 'Work' },
+  { href: '#research', label: 'Research' },
+  { href: '#cv', label: 'CV' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'All 20' },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,114 +31,76 @@ export default function Navbar() {
     }
   };
 
-  const navLinks = [
-    { href: '#profile', label: 'Home' },
-    { href: '#about-experience', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#research', label: 'Research' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
-  ];
+  const themeButton = (
+    <button
+      type="button"
+      onClick={toggleDarkMode}
+      className="nb-btn nb-btn-plain w-11 justify-center !px-0"
+      aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+    >
+      {darkMode ? <SunIcon className="h-5 w-5" aria-hidden="true" /> : <MoonIcon className="h-5 w-5" aria-hidden="true" />}
+    </button>
+  );
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md shadow-sm transition-colors text-black dark:text-white">
-      <nav className="flex items-center justify-between px-6 py-4 md:px-8 lg:px-16">
-        {/* Logo */}
-        <Link href="#profile" className="text-2xl font-semibold font-spartan text-black dark:text-white">T.O. Ojebiyi</Link>
+    <header className="sticky top-3 z-50 mx-auto mt-6 max-w-[1280px] px-4 sm:px-6">
+      <div className="nb-card flex items-center justify-between gap-3 bg-paper px-4 py-3">
+        <a href="#top" className="stk bg-yellow !text-[15px] text-on-yellow no-underline hover:text-on-yellow">
+          &lt;/&gt; T.OJEBIYI
+        </a>
 
-        {/* Desktop Nav Links with Dark Mode Toggle */}
-        <ul className="hidden md:flex md:gap-4 lg:gap-8 font-medium md:text-base lg:text-lg items-center">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="hover:text-forest hover:underline underline-offset-8 dark:text-white"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-          <li>
-            <a
-              href="/documents/TIMOTHY_OJEBIYI_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3.5 py-1.5 text-sm font-semibold rounded-full border border-neutral-900 dark:border-white hover:bg-forest hover:border-forest hover:text-white dark:hover:bg-forest dark:hover:border-forest dark:hover:text-white transition-all shadow-sm"
-              aria-label="View CV"
-            >
-              CV
-            </a>
-          </li>
-          <li>
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full border border-gray-300 dark:border-white hover:bg-gray-100 dark:hover:bg-neutral-700 transition"
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? (
-                <SunIcon className="h-5 w-5 text-yellow-400" />
-              ) : (
-                <MoonIcon className="h-5 w-5 text-black dark:text-white" />
-              )}
-            </button>
-          </li>
-        </ul>
+        <nav aria-label="Main" className="hidden md:block">
+          <ul className="flex flex-wrap items-center gap-6 font-mono text-[13px] font-bold uppercase">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="text-ink no-underline hover:text-cobalt">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-        {/* Mobile Right Controls */}
-        <div className="flex items-center gap-4 md:hidden">
-          <button
-            onClick={toggleDarkMode}
-            className="p-2 rounded-full border border-gray-300 dark:border-white hover:bg-gray-100 dark:hover:bg-neutral-700 transition"
-            aria-label="Toggle dark mode"
-          >
-            {darkMode ? (
-              <SunIcon className="h-5 w-5 text-yellow-400" />
-            ) : (
-              <MoonIcon className="h-5 w-5 text-black dark:text-white" />
-            )}
-          </button>
-
-          {/* Hamburger */}
+        <div className="flex items-center gap-3">
+          {themeButton}
+          <a href={`mailto:${LINKS.email}`} className="nb-btn nb-btn-primary hidden sm:inline-flex">
+            SAY HI →
+          </a>
           <button
             type="button"
-            className={`menu-btn ${isOpen ? 'open' : ''}`}
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle mobile menu"
+            className="nb-btn nb-btn-plain w-11 justify-center !px-0 md:hidden"
+            onClick={() => setIsOpen((open) => !open)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
           >
-            <div className="menu-btn__burger dark:invert"></div>
+            {isOpen ? <XMarkIcon className="h-5 w-5" aria-hidden="true" /> : <Bars3Icon className="h-5 w-5" aria-hidden="true" />}
           </button>
         </div>
-      </nav>
-
-      {/* Hamburger Overlay */}
-      <div id="mobile-menu" className={`menu-links ${isOpen ? 'open' : ''}`}>
-        <ul>
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="hover:text-forest hover:underline underline-offset-8"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-          <li>
-            <a
-              href="/documents/TIMOTHY_OJEBIYI_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-forest hover:underline underline-offset-8"
-            >
-              CV
-            </a>
-          </li>
-        </ul>
       </div>
+
+      {isOpen && (
+        <nav id="mobile-menu" aria-label="Mobile" className="nb-card mt-3 bg-paper p-4 md:hidden">
+          <ul className="flex flex-col gap-1 font-mono text-[15px] font-bold uppercase">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block py-2 text-ink no-underline hover:text-cobalt"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a href={`mailto:${LINKS.email}`} onClick={() => setIsOpen(false)} className="block py-2 no-underline">
+                Say hi →
+              </a>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }

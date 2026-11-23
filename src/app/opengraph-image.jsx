@@ -12,17 +12,34 @@ export default function OpengraphImage() {
           width: '100%',
           height: '100%',
           display: 'flex',
-          flexDirection: 'column',
+          alignItems: 'center',
           justifyContent: 'center',
-          padding: '80px',
-          background: '#171717',
-          color: '#ffffff',
+          background: '#f5f2ea',
+          padding: '60px',
         }}
       >
-        <div style={{ fontSize: 84, fontWeight: 700, color: '#2eaf2e' }}>Timothy Ojebiyi</div>
-        <div style={{ fontSize: 42, marginTop: 24 }}>AI/ML &amp; Full-Stack Engineer</div>
-        <div style={{ fontSize: 30, marginTop: 24, color: '#d4d4d4' }}>
-          Founder of RootLayer. Computer Science graduate.
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            padding: '64px',
+            background: '#ffffff',
+            border: '8px solid #121212',
+            boxShadow: '18px 18px 0 #121212',
+            color: '#121212',
+          }}
+        >
+          <div style={{ display: 'flex' }}>
+            <div style={{ fontSize: 30, fontWeight: 700, background: '#ffe14d', border: '4px solid #121212', padding: '6px 18px' }}>
+              {'</> T.OJEBIYI'}
+            </div>
+          </div>
+          <div style={{ fontSize: 88, fontWeight: 700, marginTop: 36, lineHeight: 1 }}>Timothy Ojebiyi</div>
+          <div style={{ fontSize: 44, marginTop: 24, color: '#2540ff', fontWeight: 700 }}>AI/ML + Full-Stack Engineer</div>
+          <div style={{ fontSize: 28, marginTop: 20, color: '#55524a' }}>Computer Science graduate · 20 projects · 2 papers</div>
         </div>
       </div>
     ),

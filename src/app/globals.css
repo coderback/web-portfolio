@@ -2,140 +2,180 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Neo-Brutalist palette. Each colour has one job:
+   paper = page, ink = text/borders/shadows, cobalt = actions and key stats,
+   yellow = one highlight per screen, tint = secondary cards, muted = captions. */
+:root {
+  --paper: #f5f2ea;
+  --grid: #e3dfd3;
+  --ink: #121212;
+  --cobalt: #2540ff;
+  --on-cobalt: #ffffff;
+  --yellow: #ffe14d;
+  --on-yellow: #121212;
+  --coral: #ff7a59;
+  --on-coral: #121212;
+  --tint: #e8e4d8;
+  --muted: #55524a;
+  --line: #121212;
+  --band: #121212;
+  --on-band: #f5f2ea;
+  color-scheme: light;
+}
+
+.dark {
+  --paper: #121212;
+  --grid: #1f1f1f;
+  --ink: #f5f2ea;
+  --cobalt: #7c8cff;
+  --on-cobalt: #121212;
+  --tint: #23221f;
+  --muted: #b8b3a7;
+  --line: #f5f2ea;
+  --band: #000000;
+  --on-band: #f5f2ea;
+  color-scheme: dark;
+}
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 104px;
+}
+
+body {
+  @apply font-sans;
+  margin: 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--cobalt);
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--cobalt);
+  outline-offset: 3px;
+}
+
+@layer components {
+  /* Card: thick border, hard offset shadow, small lift on hover. */
+  .nb-card {
+    border: 3px solid var(--line);
+    box-shadow: 7px 7px 0 var(--line);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+
+  .nb-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 9px 9px 0 var(--line);
+  }
+
+  /* Button or link styled as a button. */
+  .nb-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 3px solid var(--line);
+    box-shadow: 4px 4px 0 var(--line);
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+
+  .nb-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--line);
+  }
+
+  .nb-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--line);
+  }
+
+  .nb-btn-primary {
+    background: var(--cobalt);
+    color: var(--on-cobalt);
+  }
+
+  .nb-btn-primary:hover {
+    color: var(--on-cobalt);
+  }
+
+  .nb-btn-plain {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .nb-btn-plain:hover {
+    color: var(--ink);
+  }
+
+  /* Sticker-style tag: slightly tilted, with a small shadow. */
+  .stk {
+    display: inline-block;
+    padding: 3px 9px;
+    border: 2px solid var(--line);
+    box-shadow: 2px 2px 0 var(--line);
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1.4;
+    transform: rotate(-2deg);
+  }
+
+  .stk:nth-child(even) {
+    transform: rotate(1.5deg);
+  }
+
+  .nb-heading {
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  .nb-details summary {
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .nb-details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .nb-details[open] .nb-details-plus {
+    transform: rotate(45deg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-}
 
-body {
-  @apply font-montserrat bg-white text-neutral-800 dark:bg-neutral-900 dark:text-white;
-}
+  .nb-card,
+  .nb-btn {
+    transition: none;
+  }
 
-section {
-  @apply scroll-mt-20 bg-white dark:bg-neutral-900;
-}
-
-.btn {
-  @apply inline-block px-6 py-2 rounded-full font-semibold text-center transition duration-300;
-}
-
-.btn-primary {
-  @apply bg-neutral-900 text-white hover:bg-forest dark:bg-white dark:text-black dark:hover:bg-forest dark:hover:text-white;
-}
-
-.btn-outline {
-  @apply border border-neutral-900 text-neutral-900 hover:bg-forest hover:border-forest hover:text-white dark:border-white dark:text-white dark:hover:bg-forest dark:hover:text-white;
-}
-
-
-.menu-btn {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 24px;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  z-index: 1001;
-}
-
-.menu-btn__burger {
-  width: 30px;
-  height: 2px;
-  background: black;
-  border-radius: 1px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  position: relative;
-}
-
-.menu-btn__burger::before,
-.menu-btn__burger::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background: black;
-  border-radius: 1px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.5s ease-in-out;
-}
-
-.menu-btn__burger::before {
-  transform: translateY(-8px);
-}
-
-.menu-btn__burger::after {
-  transform: translateY(8px);
-}
-
-.menu-btn.open .menu-btn__burger {
-  transform: translateX(-30px);
-  background: transparent;
-  box-shadow: none;
-}
-
-.menu-btn.open .menu-btn__burger::before {
-  transform: rotate(45deg) translate(21px, -21px);
-}
-
-.menu-btn.open .menu-btn__burger::after {
-  transform: rotate(-45deg) translate(21px, 21px);
-}
-
-
-/* Mobile Menu Overlay */
-.menu-links {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: white;
-  @apply dark:bg-neutral-900;
-  width: 100vw;
-  height: 100vh;
-  max-height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  font-family: var(--font-spartan), sans-serif;
-  font-weight: 500;
-  font-size: 1.5rem;
-  transition: max-height 0.3s ease-in-out, visibility 0s linear 0.3s;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-}
-
-.menu-links.open {
-  max-height: 100vh;
-  visibility: visible;
-  pointer-events: auto;
-  transition: max-height 0.3s ease-in-out, visibility 0s;
-}
-
-.menu-links a {
-  display: block;
-  padding: 15px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: black;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  @apply hover:text-forest dark:text-white dark:hover:text-forest;
-}
-
-.menu-links li {
-  list-style: none;
+  .nb-card:hover,
+  .nb-btn:hover,
+  .nb-btn:active {
+    transform: none;
+  }
 }

@@ -1,40 +1,10 @@
-import Link from 'next/link';
-
 export default function Footer() {
-  const navLinks = [
-      { href: '#profile', label: 'Home' },
-      { href: '#about-experience', label: 'About' },
-      { href: '#skills', label: 'Skills' },
-      { href: '#research', label: 'Research' },
-      { href: '#projects', label: 'Projects' },
-      { href: '#contact', label: 'Contact' },
-  ];
-
   return (
-    <footer className="mt-16 py-8 bg-white dark:bg-neutral-900 text-center border-t border-gray-200 dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400">
-      <nav className="flex flex-wrap justify-center gap-6 mb-3 text-sm sm:text-base">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="hover:text-forest hover:underline underline-offset-8 font-medium"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <a
-            href="/documents/TIMOTHY_OJEBIYI_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-forest hover:underline underline-offset-8 font-medium"
-            aria-label="View CV"
-          >
-            CV
-          </a>
-      </nav>
-      <p className="text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} Timothy Ojebiyi. All Rights Reserved.
-      </p>
+    <footer className="mx-auto mb-14 max-w-[1280px] px-4 sm:px-6">
+      <div className="nb-card flex flex-wrap justify-between gap-2.5 bg-ink px-5 py-3.5 font-mono text-xs font-bold text-paper">
+        <span>&lt;/&gt; T.OJEBIYI</span>
+        <span>&copy; {new Date().getFullYear()} Timothy Ojebiyi</span>
+      </div>
     </footer>
   );
 }

@@ -6,16 +6,25 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // Colours come from CSS variables in globals.css so dark mode swaps them in one place.
       colors: {
-        forest: {
-          DEFAULT: '#228B22',
-          light: '#2eaf2e',
-          dark: '#1e6b1e',
-        },
+        paper: 'var(--paper)',
+        ink: 'var(--ink)',
+        cobalt: 'var(--cobalt)',
+        'on-cobalt': 'var(--on-cobalt)',
+        yellow: 'var(--yellow)',
+        'on-yellow': 'var(--on-yellow)',
+        coral: 'var(--coral)',
+        'on-coral': 'var(--on-coral)',
+        tint: 'var(--tint)',
+        muted: 'var(--muted)',
+        line: 'var(--line)',
+        band: 'var(--band)',
+        'on-band': 'var(--on-band)',
       },
       fontFamily: {
-        montserrat: ['var(--font-montserrat)', 'sans-serif'],
-        spartan: ['var(--font-spartan)', 'sans-serif'],
+        sans: ['var(--font-grotesk)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
     },
   },

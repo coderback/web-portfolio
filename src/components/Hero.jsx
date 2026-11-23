@@ -1,116 +1,112 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Typewriter } from 'react-simple-typewriter';
-import { DocumentArrowDownIcon } from '@heroicons/react/24/solid';
+import { LINKS, PROOF, TIMELINE, TIMELINE_SPAN } from '../content/portfolio';
 
-const ROLES = [
-  'Computer Science Graduate',
-  'Full-Stack Engineer',
-  'AI/ML Engineer',
-  'Data Scientist',
+const PROOF_TONES = {
+  // Fixed dark in both themes so the yellow number keeps its contrast.
+  ink: { card: 'bg-[#121212] text-[#f5f2ea]', value: 'text-yellow' },
+  cobalt: { card: 'bg-cobalt text-on-cobalt', value: '' },
+  yellow: { card: 'bg-yellow text-on-yellow', value: '' },
+  tint: { card: 'bg-tint text-ink', value: '' },
+};
+
+const BAR_TONES = { cobalt: 'bg-cobalt', coral: 'bg-coral' };
+
+const FIND_ME = [
+  { label: 'GITHUB ↗', href: LINKS.github },
+  { label: 'LINKEDIN ↗', href: LINKS.linkedin },
+  { label: 'ORCID ↗', href: LINKS.orcid },
 ];
 
 export default function Hero() {
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  }, []);
-
   return (
-    <section
-      id="profile"
-      className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-16 pt-32 pb-20 gap-12"
-    >
-      {/* Profile Image */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        className="w-60 h-60 lg:w-96 lg:h-96 rounded-full overflow-hidden flex-shrink-0"
-      >
-        <Image
-          src="/assets/pfp.jpeg"
-          alt="profile picture"
-          width={400}
-          height={400}
-          className="w-full h-full object-cover"
-          priority
-        />
-      </motion.div>
+    <section id="top" aria-label="Introduction" className="flex flex-col gap-7">
+      <div className="flex flex-wrap gap-7">
+        <div className="nb-card min-w-0 flex-[2_1_560px] bg-paper p-6 sm:p-9">
+          <span className="stk bg-cobalt !text-[13px] text-on-cobalt">HEY, I&apos;M TIMOTHY</span>
+          <h1 className="nb-heading mt-5 text-5xl sm:text-6xl lg:text-7xl">AI/ML + Full-Stack Engineer</h1>
+          <p className="mt-5 max-w-[600px] text-lg leading-relaxed sm:text-[19px]">
+            Computer Science graduate. I ship production systems end to end, and measure them out of sample before
+            I call them done.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-4">
+            <a href="#work" className="nb-btn nb-btn-primary min-h-[48px] text-sm">
+              SEE THE WORK ↓
+            </a>
+            <a href={LINKS.cv} target="_blank" rel="noopener noreferrer" className="nb-btn nb-btn-plain min-h-[48px] text-sm">
+              CV.PDF ↓
+            </a>
+          </div>
+        </div>
 
-      {/* Text Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-center lg:text-left max-w-xl"
-      >
-        <p className="text-lg font-light mb-2">Hello, I&apos;m</p>
-        <h1 className="text-4xl lg:text-5xl font-extrabold mb-4 font-spartan text-forest">
-          Timothy Ojebiyi
-        </h1>
-
-        {/* Typing Effect */}
-        <div className="text-xl font-medium text-gray-700 dark:text-white mb-6 min-h-[2rem]">
-          {reducedMotion ? (
-            ROLES[0]
-          ) : (
-            <Typewriter
-              words={ROLES}
-              loop={0}
-              cursor
-              cursorStyle="|"
-              typeSpeed={70}
-              deleteSpeed={40}
-              delaySpeed={1500}
+        <div className="nb-card flex min-h-[340px] flex-[1_1_260px] bg-coral p-[18px]">
+          <div className="relative min-h-[300px] w-full border-[3px] border-[#121212]">
+            <Image
+              src="/assets/pfp.jpeg"
+              alt="Portrait of Timothy Ojebiyi"
+              fill
+              sizes="(min-width: 1024px) 300px, 100vw"
+              className="object-cover"
+              priority
             />
-          )}
+          </div>
         </div>
 
-        <p className="text-base text-gray-600 dark:text-gray-300 mb-8">
-          Computer Science graduate specialising in AI/ML and full-stack engineering, and solo founder of
-          RootLayer, an AI-powered web compliance SaaS. I ship production systems end-to-end and bring the same
-          evidence-driven approach to machine learning, forecasting and systems projects.
-        </p>
-
-        {/* Social Links & CV */}
-        <div className="flex items-center justify-center lg:justify-start gap-5">
-          <Link 
-            href="https://github.com/coderback" 
-            target="_blank" 
-            aria-label="GitHub Profile"
-            className="text-gray-600 hover:text-forest dark:text-gray-400 dark:hover:text-forest transition-colors"
-          >
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-            </svg>
-          </Link>
-          <Link 
-            href="https://www.linkedin.com/in/timothy-oluwatobi-ojebiyi/" 
-            target="_blank" 
-            aria-label="LinkedIn Profile"
-            className="text-gray-600 hover:text-forest dark:text-gray-400 dark:hover:text-forest transition-colors"
-          >
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-          </Link>
-          <a
-            href="/documents/TIMOTHY_OJEBIYI_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download CV"
-            title="Download CV"
-            className="text-gray-600 hover:text-forest dark:text-gray-400 dark:hover:text-forest transition-colors"
-          >
-            <DocumentArrowDownIcon className="w-6 h-6" aria-hidden="true" />
+        <div id="contact" className="nb-card flex flex-[1_1_260px] flex-col gap-3 bg-tint p-6">
+          <h2 className="nb-heading mb-1 text-3xl">Find me</h2>
+          <a href={`mailto:${LINKS.email}`} className="nb-btn nb-btn-primary !border-2 text-xs">
+            {LINKS.email}
           </a>
+          {FIND_ME.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nb-btn nb-btn-plain !border-2 text-xs"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
-      </motion.div>
+      </div>
+
+      <ul aria-label="Highlights" className="flex flex-wrap gap-7">
+        {PROOF.map((item) => (
+          <li key={item.label} className={`nb-card flex-[1_1_220px] px-5 py-5 ${PROOF_TONES[item.tone].card}`}>
+            <p className={`font-mono text-5xl font-bold leading-none ${PROOF_TONES[item.tone].value}`}>{item.value}</p>
+            <p className="mt-2 font-mono text-xs font-bold uppercase">{item.label}</p>
+          </li>
+        ))}
+      </ul>
+
+      <div className="nb-card bg-paper px-5 pb-5 pt-4" aria-label="Timeline, September 2022 to now" role="group">
+        <div className="flex justify-between pl-32 font-mono text-xs text-muted sm:pl-52" aria-hidden="true">
+          <span>2022</span>
+          <span>2023</span>
+          <span>2024</span>
+          <span>2025</span>
+          <span>2026</span>
+        </div>
+        <ul>
+          {TIMELINE.map((bar) => (
+            <li key={bar.label} className="flex min-h-[40px] items-center border-t-2 border-line">
+              <p className="w-32 shrink-0 text-sm font-bold leading-tight sm:w-52 sm:text-[15px]">
+                {bar.label}{' '}
+                <span className="block font-mono text-[11px] font-normal text-muted sm:inline">{bar.dates}</span>
+              </p>
+              <div className="relative h-4 flex-1">
+                <span
+                  className={`absolute top-0 h-4 border-2 border-line ${BAR_TONES[bar.tone]}`}
+                  style={{
+                    left: `${(bar.from / TIMELINE_SPAN) * 100}%`,
+                    width: `${((bar.to - bar.from + 1) / TIMELINE_SPAN) * 100}%`,
+                  }}
+                />
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
